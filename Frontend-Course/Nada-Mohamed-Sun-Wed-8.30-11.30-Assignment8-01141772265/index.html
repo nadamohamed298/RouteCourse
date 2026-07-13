@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's For Dinner</title>
+    <link rel="icon" href="./pics/favicon-what's-for-dinner.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- FONT AWESOME LOCAL FILE -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- BOOTSTRAP LOCAL FILE -->
+    <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./WhatsForDinner.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-xl navbar-section p-0 w-100 z-3"
+        id="whatsForDinnerNav">
+        <div class="navbar-container container-fluid justify-content-between py-3 px-4">
+            <!-- NAVBAR LOGO AND WEBSITE NAME -->
+            <div class="nav-logo d-flex align-items-center">
+                <div class="nav-logo-name d-flex flex-row align-items-center">
+                    <div class="wfd-logo-image d-flex justify-content-center align-items-center rounded-circle"><i
+                            class="fa-solid fa-utensils"></i></div>
+                    <div class="wfd-text d-flex flex-column">
+                        <h1 class="wfd-h1-text text-decoration-none fw-bold m-0" href="#">What's For Dinner</h1>
+                        <p class="d-block m-0">Your daily meal inspiration</p>
+                    </div>
+                </div>
+            </div>
+            <!-- NAVBAR BURGER MENU BUTTON THAT APPEARS WHEN WE MINIMIZE THE SCREEN -->
+            <button id="burgerMenuButton"
+                class="navbar-toggler burger-menu-btn shadow-none border-0 p-0 d-block d-md-none" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars burger-menu-btn-icon fs-md-4"></i>
+            </button>
+            <div class="collapse navbar-collapse mobile-menu-nav p-xl-0 d-md-none border-1" id="navbarSupportedContent">
+                <div class="navbar-nav navbar-links-one me-auto d-block d-md-none">
+                    <button id="bookmarkButton"
+                        class="bookmark-btn p-0 border-0 d-block d-flex flex-row justify-content-md-center justify-content-start align-items-center me-md-4 mb-3 w-100">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <span class="d-block d-md-none">Saved Recipes</span>
+                    </button>
+                    <button id="clockButton"
+                        class="clock-btn p-0 border-0 d-block d-flex flex-row justify-content-md-center justify-content-start align-items-center me-md-4 mb-3">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span class="d-block d-md-none">Recent</span>
+                    </button>
+                    <button id="settingsButton"
+                        class="settings-btn p-0 border-0 d-block d-flex flex-row justify-content-md-center justify-content-start align-items-center me-md-4 mb-3">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="d-block d-md-none">Settings</span>
+                    </button>
+                    <div
+                        class="profile-image d-flex flex-row justify-content-md-center justify-content-start align-items-center">
+                        <img class="border-2 rounded-circle me-md-4" src="./pics/avatar-3.jpg" alt="Profile picture">
+                        <span class="d-block d-md-none">Profile</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-right-content justify-content-center align-items-center d-none d-md-block">
+                <button id="bookmarkButton" class="bookmark-btn me-4 p-0 border-0">
+                    <i class="fa-solid fa-bookmark"></i>
+                </button>
+                <button id="clockButton" class="clock-btn me-4 p-0 border-0">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </button>
+                <button id="settingsbutton" class="settings-btn me-4 p-0 border-0">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <img class="border-2 rounded-circle" src="./pics/avatar-3.jpg" alt="Profile picture">
+            </div>
+        </div>
+    </nav>
+    <main class="px-4 m-auto m-xl-0">
+        <section class="border-1">
+            <div class="recipes-content">
+                <div id="recipeImage" class="recipes-left-content"></div>
+
+                <div class="recipes-right-content h-100">
+                    <div class="meal-description mb-4 d-flex flex-row justify-content-between align-items-start">
+                        <div class="left-content">
+                            <div id="recipeLevelOfDifficultyAndType"
+                                class="rounded-rectangles d-flex align-items-center"></div>
+                            <div id="mealNameAndDescription" class="meal-name-and-description"></div>
+                        </div>
+                        <div class="right-content d-flex align-self-center order-0">
+                            <button id="bookmarkBtn"
+                                class="bookmark-button me-2 d-flex justify-content-center align-items-center border-0">
+                                <i class="fa-solid fa-bookmark"></i>
+                            </button>
+                            <button id="shareBtn"
+                                class="share-button d-flex justify-content-center align-items-center border-0">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="recipeContainer"></div>
+
+                    <div class="tabs border-1 p-3 mb-4">
+                        <div class="all-tabs nav nav-underline d-grid gap-2" id="myTab" role="tablist">
+                            <button
+                                class="nav-link ingredients-nav-link active pt-0 pb-2 fs-6 fw-semibold lh-base border-2 d-flex justify-content-center align-items-center"
+                                id="ingredientsTab" data-bs-toggle="tab" data-bs-target="#ingredients-tab-pane"
+                                type="button" role="tab" aria-controls="ingredients-tab-pane" aria-selected="true">
+                                <i class="fa-solid fa-list-check my-0 ms-0 me-1 fs-6 fw-semibold lh-base me-1"></i>
+                                Ingredients
+                            </button>
+                            <button
+                                class="nav-link pt-0 pb-2 fs-6 fw-semibold lh-base border-2 d-flex justify-content-center align-items-center"
+                                id="instructionsTab" data-bs-toggle="tab" data-bs-target="#instructions-tab-pane"
+                                type="button" role="tab" aria-controls="instructions-tab-pane" aria-selected="false">
+                                <i class="fa-solid fa-book-open my-0 ms-0 me-1 fs-6 fw-semibold lh-base me-1"></i>
+                                Instructions
+                            </button>
+                            <button
+                                class="nav-link pt-0 pb-2 fs-6 fw-semibold lh-base border-2 d-flex justify-content-center align-items-center"
+                                id="nutritionTab" data-bs-toggle="tab" data-bs-target="#nutrition-tab-pane"
+                                type="button" role="tab" aria-controls="nutrition-tab-pane" aria-selected="false">
+                                <i class="fa-solid fa-chart-pie my-0 ms-0 me-1 fs-6 fw-semibold lh-base me-1"></i> Nutrition
+                            </button>
+                            <button
+                                class="nav-link pt-0 pb-2 fs-6 fw-semibold lh-base border-2 d-flex justify-content-center align-items-center"
+                                id="chefsTipTab" data-bs-toggle="tab" data-bs-target="#chefs-tip-tab-pane" type="button"
+                                role="tab" aria-controls="chefs-tip-tab-pane" aria-selected="false">
+                                <i class="fa-solid fa-lightbulb my-0 ms-0 me-1 fs-6 fw-semibold lh-base me-1"></i> Chef's
+                                Tips
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TAB CONTENTS -->
+                    <div class="tab-content ">
+
+                        <!-- INGREDIENTS TAB -->
+                        <div class="ingredients-tab-content tab-pane fade show active p-4 rounded-4"
+                            id="ingredients-tab-pane" role="tabpanel" aria-labelledby="ingredientsTab" tabindex="0">
+                            <ul id="ingredientsList" class="ingredients-tab-content-list list-unstyled"></ul>
+                        </div>
+
+                        <!-- INSTRUCTIONS TAB -->
+                        <div class="instructions-tab-content tab-pane fade" id="instructions-tab-pane" role="tabpanel"
+                            aria-labelledby="instructionsTab" tabindex="0"></div>
+
+                        <!-- NUTRITION TAB -->
+                        <div class="nutrition-tab-content tab-pane fade" id="nutrition-tab-pane" role="tabpanel"
+                            aria-labelledby="nutritionTab" tabindex="0">
+                            <div id="nutritionTabContent" class="nutrition-tab-content-container gap-3 d-grid"></div>
+                        </div>
+
+                        <!-- CHEF'S TIP TAB -->
+                        <div class="chefs-tip-tab-content tab-pane fade" id="chefs-tip-tab-pane" role="tabpanel"
+                            aria-labelledby="chefsTipTab" tabindex="0">
+                            <div id="chefsTipContent" class="chefs-tip-content"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- TRY ANOTHER RECIPE BUTTON -->
+                    <div class="try-another-recipe-button pt-4 border-top d-flex align-items-center">
+                        <button onclick="getRandomRecipe()" id="tryAnotherRecipeBtn"
+                            class="try-another-recipe px-4 border-0 fs-6 fw-semibold lh-base py-2 px-3 px-md-4">
+                            <i class="fa-solid fa-rotate me-1 fw-semibold lh-base me-md-2"></i>
+                            Try Another Recipe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- BOOTSTRAP LOCAL FILE -->
+    <script src="./Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./WhatsForDinner.js"></script>
+</body>
+
+</html>

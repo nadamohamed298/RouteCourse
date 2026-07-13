@@ -1,0 +1,906 @@
+* {
+  box-sizing: border-box;
+  color: black;
+}
+
+body {
+  background: linear-gradient(
+    to right bottom,
+    #fff7ed 0%,
+    #fffbeb 50%,
+    #fefce8 100%
+  );
+}
+
+:root {
+  --transparent: transparent;
+  --white: white;
+  --orange-50: #fff7ed;
+  --gray-200: #ebe6e7;
+  --gray-500: #6a7282;
+  --gray-600: #4a5565;
+  --gray-700: #364153;
+  --gray-900: #101828;
+  --blue-50: #dbeafe;
+  --red-50: #ffe2e2;
+  --gold: #fdc700;
+  --bg-gradient-orange: linear-gradient(to bottom right, #ea580c, #c2410c);
+}
+
+/* HEADER - NAVBAR */
+.navbar-section {
+  background-color: var(--white) !important;
+  display: block;
+  max-width: 100%;
+  margin: auto;
+  border-bottom: 0.0625rem solid #ffedd4;
+  box-shadow:
+    0 4px 5px -5px #0000001a,
+    0 4px 4px -4px #0000001a;
+}
+
+.navbar-container {
+  max-width: 84%;
+  margin: auto;
+}
+
+.burger-menu-btn:hover i {
+  color: #f54a00;
+}
+
+.burger-menu-btn i {
+  color: var(--gray-600);
+}
+
+.wfd-logo-image {
+  color: var(--white);
+  font-size: 1.0938rem;
+  width: 48px;
+  height: 48px;
+  margin: 0 0.75rem 0 0;
+  background: linear-gradient(to bottom right, #ff6900, #fb2c36);
+  box-shadow:
+    0 10px 15px -3px #0000001a,
+    0 4px 6px -4px #0000001a;
+}
+
+.wfd-logo-image i {
+  color: var(--white);
+}
+
+.wfd-h1-text {
+  color: var(--gray-900);
+  font-size: 24px;
+  line-height: 1.33333;
+}
+
+.wfd-text p {
+  /* font-size: 0.875rem; */
+  font-weight: 400;
+  line-height: 1.42857;
+  color: var(--gray-500);
+}
+
+.mobile-menu-nav {
+  padding: 1rem 0;
+  margin: 1rem 0 0 0;
+  border-top: solid #ffedd4;
+}
+
+.mobile-menu-nav img,
+.navbar-right-content img {
+  width: 40x;
+  height: 40px;
+  border: solid #ffb86a;
+}
+
+.profile-image:hover span {
+  color: #f54a00;
+}
+
+.profile-image img {
+  margin: 0 0.75rem 0 0;
+}
+
+.bookmark-btn,
+.clock-btn,
+.settings-btn {
+  background-color: var(--white);
+  width: 100%;
+}
+
+.bookmark-btn span,
+.clock-btn span,
+.settings-btn span,
+.profile-image span {
+  color: var(--gray-600);
+}
+
+.bookmark-btn:hover span,
+.clock-btn:hover span,
+.settings-btn:hover span,
+.bookmark-btn:hover i,
+.clock-btn:hover i,
+.settings-btn:hover i,
+.profile-image span:hover {
+  color: #f54a00;
+}
+
+.bookmark-btn i,
+.clock-btn i,
+.settings-btn i {
+  margin: 0 0.75rem 0 0;
+  color: var(--gray-600);
+  font-size: 1.1875rem;
+}
+
+/* SECTION */
+main {
+  padding-block: 32px;
+  width: 85%;
+}
+section {
+  margin: 0 0 2rem 0;
+  box-shadow:
+    0 20px 25px -5px #0000001a,
+    0 8px 10px -6px #0000001a;
+  background-color: var(--white);
+  border: solid #ffedd4;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.recipes-content {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  height: 750px;
+}
+
+.recipes-left-content {
+  height: 100%;
+  grid-column: span 2 / span 2;
+  position: relative;
+  overflow: hidden;
+}
+
+.recipes-left-content img {
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.rating {
+  box-shadow:
+    0 10px 15px -3px #0000001a,
+    0 4px 6px -4px #0000001a;
+  background-color: var(--white);
+  border-radius: 1.5625rem;
+  top: 24px;
+  left: 24px;
+}
+
+/* .rating-text {} */
+
+.rating-text i {
+  color: var(--gold);
+}
+
+.overall-rating {
+  color: var(--gray-900);
+}
+
+.reviews-number {
+  font-size: 0.875rem;
+  line-height: 1.42857;
+  color: var(--gray-500);
+}
+
+.meal-info {
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 10px 15px -3px #0000001a,
+    0 4px 6px -4px #0000001a;
+  background-color: #fffffff2;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+}
+
+.meal-info-content {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* .prep-time {} */
+
+.prep-time i {
+  line-height: 1.33333;
+  color: #ff6900;
+}
+
+.prep-time-text {
+  font-size: 0.875rem;
+  line-height: 1.42857;
+  color: var(--gray-500);
+}
+
+.prep-time-number {
+  color: var(--gray-900);
+}
+
+/* .cook-time {} */
+
+.cook-time i {
+  line-height: 1.33333;
+  color: #fb2c36;
+}
+
+.cook-time-text {
+  font-size: 0.875rem;
+  line-height: 1.42857;
+  color: var(--gray-500);
+}
+
+.cook-time-number {
+  color: var(--gray-900);
+}
+
+/* .servings {} */
+
+.servings i {
+  line-height: 1.33333;
+  color: #2b7fff;
+}
+
+.servings-text {
+  font-size: 0.875rem;
+  line-height: 1.42857;
+  color: var(--gray-500);
+}
+
+.servings-number {
+  color: var(--gray-900);
+}
+
+.recipes-right-content {
+  padding: 2.5rem;
+  grid-column: span 3 / span 3;
+  scrollbar-width: thin;
+  scrollbar-color: #fe886a4d var(--transparent);
+}
+
+.meal-description {
+  gap: 1.25rem;
+  font-size: 1.125rem;
+  line-height: 1.55556;
+  color: var(--gray-600);
+}
+
+/* .left-content {} */
+
+.rounded-rectangles {
+  margin: 0 0 0.75rem 0;
+}
+
+.green-rec,
+.blue-rec {
+  font-size: 0.75rem;
+  line-height: 1.33333;
+  border-radius: 0.75rem;
+  padding-inline: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+.green-rec {
+  color: #008236;
+  background-color: #dcfce7;
+}
+
+.blue-rec {
+  color: #1447e6;
+  background-color: var(--blue-50);
+  margin-right: 0;
+}
+
+.meal-name {
+  font-size: 2.25rem;
+  line-height: 1.11111;
+  color: var(--gray-900);
+}
+
+/* .right-content {} */
+
+.bookmark-button,
+.share-button {
+  transition: all 0.15s;
+  background-color: #ffedd4;
+  border-radius: 0.75rem;
+  width: 48px;
+  height: 48px;
+}
+
+.bookmark-button:hover,
+.share-button:hover {
+  background-color: #ffd7a8;
+}
+
+.bookmark-button i,
+.share-button i {
+  color: #f54a00;
+  font-size: 0.9375rem;
+}
+
+.warning-red-rectangle {
+  background-color: #fef2f2;
+  border-left: 0.25rem solid #fb2c36;
+}
+
+.warning-icon-text i {
+  color: #fb2c36;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-right: 0.75rem;
+}
+
+.red-text1 {
+  color: #9f0712;
+}
+
+.red-text2 {
+  font-size: 0.875rem;
+  line-height: 1.42857;
+  color: #e7000b;
+}
+
+.tabs {
+  border-bottom: solid var(--gray-200);
+}
+
+.all-tabs {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.nav-link {
+  background-color: #0000;
+  color: var(--gray-500);
+  white-space: nowrap;
+  border: solid #0000;
+}
+
+.nav-link i {
+  color: var(--gray-500);
+}
+
+.nav-link.active.nav-link,
+.nav-link.active i {
+  color: #f54a00;
+  outline: none;
+}
+
+.nav-link:hover i,
+.nav-link:hover.nav-link {
+  border-bottom-color: #f54a00;
+  transition: all 0.05;
+  color: var(--gray-700);
+  border-bottom-color: var(--transparent);
+}
+
+.nav-link:focus.nav-link {
+  border-bottom-color: #f54a00;
+}
+
+.ingredients-nav-link:hover.ingredients-nav-link,
+.ingredients-nav-link:hover.ingredients-nav-link i {
+  color: var(--gray-500);
+}
+
+.ingredients-nav-link.active.ingredients-nav-link,
+.ingredients-nav-link.active.ingredients-nav-link i {
+  color: #f54a00;
+}
+
+.ingredients-tab-content {
+  background: linear-gradient(to bottom right, var(--orange-50), #fffbeb);
+}
+
+.ingredients-tab-content,
+.instructions-tab-content,
+.nutrition-tab-content,
+.chefs-tip-tab-content {
+  overflow-y: auto;
+  height: 350px;
+  scrollbar-width: thin;
+  scrollbar-color: #fe886a4d;
+}
+
+.ingredients-number {
+  color: var(--white);
+  font-size: 0.75rem;
+  background-color: #ff6900;
+  width: 24px;
+  height: 24px;
+  margin: 0.125rem 0.75rem 0 0;
+}
+
+.ingredients-li {
+  margin-bottom: 0.75rem;
+}
+
+.ingredients-li span {
+  color: var(--gray-700);
+}
+
+.tip-one,
+.tip-two,
+.tip-three,
+.tip-four {
+  border-left: 0.25rem solid #ffb900;
+  background-color: #fffbeb;
+  border-radius: 12px;
+}
+
+.tip-one i,
+.tip-two i,
+.tip-three i,
+.tip-four i {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: #e17100;
+  margin-right: 0.75rem;
+}
+
+.tip-one p,
+.tip-two p,
+.tip-three p,
+.tip-four p {
+  color: var(--gray-700);
+}
+
+.step-number {
+  color: var(--white);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  background-color: #ff6900;
+  width: 48px;
+  height: 48px;
+}
+
+.step-text {
+  flex: 1;
+}
+
+.step-text p {
+  color: var(--gray-700);
+}
+
+.nutrition-tab-content-container {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.calories-content,
+.protein-content,
+.carbohydrates-content,
+.fat-content,
+.fiber-content,
+.sodium-content {
+  background-color: #fbf9fa;
+  border-radius: 0.75rem;
+}
+
+.calories-icon,
+.protein-icon,
+.carbohydrates-icon,
+.fat-icon,
+.fiber-icon,
+.sodium-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.75rem;
+}
+
+.calories-icon {
+  background-color: #ffedd4;
+}
+
+.protein-icon {
+  background-color: var(--blue-50);
+}
+
+.carbohydrates-icon {
+  background-color: #fef9c2;
+}
+
+.fat-icon {
+  background-color: var(--red-50);
+}
+
+.fiber-icon {
+  background-color: #dbfce7;
+}
+
+.sodium-icon {
+  background-color: #fce7f3;
+}
+
+.calories-icon i {
+  color: #f54a00;
+}
+
+.calories-text,
+.protein-text,
+.carbohydrates-text,
+.fat-text,
+.fiber-text,
+.sodium-text {
+  color: var(--gray-700);
+}
+
+.nutrition-unit {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: var(--gray-900);
+}
+
+.protein-icon i {
+  color: #155dfc;
+}
+
+.carbohydrates-icon i {
+  color: #d08700;
+}
+
+.fat-icon i {
+  color: #e7000b;
+}
+
+.fiber-icon i {
+  color: #00a63e;
+}
+
+.sodium-icon i {
+  color: #e60076;
+}
+
+.try-another-recipe-button {
+  margin: 2rem 0 0 0;
+  border-top: solid var(--gray-200);
+}
+
+.try-another-recipe {
+  font-size: 1rem;
+  padding-block: 0.75rem;
+  transition: all 0.15s;
+  box-shadow:
+    0 10px 15px -3px #0000001a,
+    0 4px 6px -4px #0000001a;
+  color: var(--white);
+  border-radius: 0.75rem;
+  background: linear-gradient(to right, #ff6900, #fb2c36);
+}
+
+.try-another-recipe:hover {
+  box-shadow:
+    0 20px 25px -5px #0000001a,
+    0 8px 10px -6px #0000001a;
+  transform: scale(105%);
+  background: linear-gradient(to right, #f54a00, #e7000b);
+}
+
+.try-another-recipe i {
+  font-size: 0.875rem;
+  color: var(--white);
+}
+
+/* =======================================================MEDIA QUERY====================================================== */
+
+/* XS SIZE */
+@media (min-width: 0px) {
+  /* HEADER - NAVBAR */
+  .navbar-container {
+    max-width: 100%;
+  }
+
+  .wfd-h1-text {
+    font-size: 1.125rem !important;
+    line-height: 1.55556;
+  }
+
+  .wfd-text p {
+    font-size: 0.75rem !important;
+  }
+
+  .wfd-logo-image i {
+    font-size: 1.2rem;
+  }
+
+  .bookmark-btn i,
+  .clock-btn i,
+  .settings-btn i {
+    width: fit-content !important;
+    margin: 0 0.75rem 0 0 !important;
+  }
+
+  .profile-image {
+    width: 100%;
+  }
+
+  .profile-image img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .burger-menu-btn i {
+    font-size: 1.5rem;
+  }
+
+  main {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .mobile-menu-nav {
+    padding: 1rem 0;
+    margin: 1rem 0 0 0;
+    border-top: none;
+  }
+
+  .wfd-h1-text {
+    font-size: 1.5rem;
+    line-height: 1.55556;
+  }
+
+  .wfd-text p {
+    font-size: 0.875rem;
+    line-height: 1.33333;
+  }
+
+  .profile-image {
+    width: fit-content;
+  }
+
+  main {
+    min-height: 150vh;
+  }
+
+  .ingredients-tab-content {
+    scrollbar-width: thin;
+  }
+
+  .recipes-content {
+    display: flex;
+    flex-direction: column;
+    height: 1250px;
+  }
+
+  .recipes-left-content {
+    min-height: 400px !important;
+  }
+
+  .recipes-right-content {
+    overflow-y: none;
+    height: 100% !important;
+    padding: 1.25rem;
+    width: 100%;
+  }
+
+  .meal-info {
+    padding: 0.75rem !important;
+  }
+
+  .prep-time i,
+  .cook-time i,
+  .servings i {
+    font-size: 1.125rem !important;
+  }
+
+  .prep-time-text,
+  .cook-time-text,
+  .servings-text {
+    font-size: 0.75rem !important;
+  }
+
+  .prep-time-number,
+  .cook-time-number,
+  .servings-number {
+    font-size: 0.875rem !important;
+  }
+
+  .rating-text i {
+    font-size: 0.865rem !important;
+  }
+
+  .overall-rating {
+    font-size: 0.875rem !important;
+  }
+
+  .reviews-number {
+    font-size: 0.75rem !important;
+  }
+
+  .meal-description {
+    flex-direction: column-reverse !important;
+    gap: 1.25rem;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+  }
+
+  .right-content {
+    align-self: flex-end !important;
+  }
+
+  .meal-name {
+    font-size: 1.5rem;
+  }
+
+  .meal-description {
+    font-size: 0.875rem;
+  }
+
+  .red-text1 {
+    font-size: 0.875rem !important;
+  }
+  .red-text2 {
+    font-size: 0.75rem !important;
+  }
+
+  .nav-link,
+  .nav-link i {
+    font-size: 0.75rem !important;
+  }
+
+  .try-another-recipe {
+    padding-inline: 1rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .try-another-recipe i {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* MD SIZE */
+@media (min-width: 768px) {
+  /* HEADER - NAVBAR */
+  .navbar-right-content {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .bookmark-btn,
+  .clock-btn,
+  .settings-btn {
+    width: 1rem !important;
+  }
+
+  .meal-info {
+    padding: 1.5rem !important;
+  }
+
+  .prep-time i,
+  .cook-time i,
+  .servings i {
+    font-size: 1.5rem !important;
+  }
+
+  .prep-time-text,
+  .cook-time-text,
+  .servings-text {
+    font-size: 0.875rem !important;
+  }
+
+  .prep-time-number,
+  .cook-time-number,
+  .servings-number {
+    font-size: 1rem !important;
+  }
+
+  .try-another-recipe {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  .try-another-recipe i {
+    font-size: 0.825rem !important;
+  }
+  .bookmark-btn i,
+  .clock-btn i,
+  .settings-btn i {
+    margin: 0;
+  }
+
+  .mobile-menu-nav {
+    padding: 1rem 0;
+    margin: 1rem 0 0 0;
+    border-top: none;
+  }
+
+  .bookmark-btn,
+  .clock-btn,
+  .settings-btn {
+    width: fit-content;
+  }
+
+  .rating-text i {
+    font-size: 0.94rem !important;
+  }
+
+  .overall-rating {
+    font-size: 1rem !important;
+  }
+
+  .reviews-number {
+    font-size: 0.875rem !important;
+  }
+
+  .meal-name {
+    font-size: 2.25rem !important;
+  }
+
+  .meal-description {
+    font-size: 1.125rem;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+  }
+
+  .right-content {
+    align-self: center !important;
+  }
+
+  .red-text1 {
+    font-size: 1rem !important;
+  }
+  .red-text2 {
+    font-size: 0.875rem !important;
+  }
+
+  .nav-link,
+  .nav-link i {
+    font-size: 1rem !important;
+  }
+
+  .wfd-h1-text {
+    font-size: 1.5rem !important;
+    line-height: 1.33333;
+  }
+
+  .wfd-text p {
+    font-size: 0.875rem !important;
+    line-height: 1.42857;
+  }
+}
+
+/* XL SIZE */
+@media (min-width: 1200px) {
+  /* HEADER - NAVBAR */
+  main {
+    min-height: 100%;
+  }
+
+  .ingredients-tab-content {
+    scrollbar-width: thin;
+  }
+
+  .recipes-content {
+    display: grid;
+    height: 750px;
+  }
+
+  .recipes-right-content {
+    overflow-y: auto;
+    padding: 2.5rem;
+  }
+}
+
+/* XXL SIZE */
+@media (min-width: 1400px) {
+  /* HEADER - NAVBAR */
+  section {
+    margin: auto !important;
+    max-width: 84%;
+  }
+
+  .navbar-container {
+    max-width: 84%;
+  }
+}
