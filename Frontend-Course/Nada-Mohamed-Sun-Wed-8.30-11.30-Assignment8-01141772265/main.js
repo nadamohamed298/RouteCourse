@@ -7,7 +7,7 @@ var recipes = [
     servings: 4,
     recipeName: "Vegetable Curry",
     recipeDescription: "Hearty vegetarian curry with coconut milk",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Asian",
     hasWarning: true,
     image: "./pics/photo-1585032226651-759b368d7246.avif",
@@ -54,7 +54,7 @@ var recipes = [
     recipeName: "Pad Thai",
     recipeDescription:
       "Popular Thai stir-fried noodles with shrimp and peanuts",
-    levelOfDificulty: "Intermediate",
+    levelOfDifficulty: "Intermediate",
     recipeType: "Asian",
     hasWarning: false,
     image: "./pics/photo-1559314809-0d155014e29e.avif",
@@ -100,7 +100,7 @@ var recipes = [
     servings: 4,
     recipeName: "Greek Moussaka",
     recipeDescription: "Traditional layered eggplant casserole with lamb",
-    levelOfDificulty: "Intermediate",
+    levelOfDifficulty: "Intermediate",
     recipeType: "Mediterranean",
     hasWarning: true,
     image: "./pics/photo-1601050690597-df0568f70950.avif",
@@ -146,7 +146,7 @@ var recipes = [
     servings: 2,
     recipeName: "Teriyaki Chicken Bowl",
     recipeDescription: "Sweet and savory chicken over rice with vegetables",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Asian",
     hasWarning: false,
     image: "./pics/photo-1546069901-eacef0df6022.avif",
@@ -191,7 +191,7 @@ var recipes = [
     servings: 2,
     recipeName: "Margherita Pizza",
     recipeDescription: "Classic Italian pizza with fresh mozzarella and basil",
-    levelOfDificulty: "Intermediate",
+    levelOfDifficulty: "Intermediate",
     recipeType: "Italian",
     hasWarning: true,
     image: "./pics/photo-1574071318508-1cdbab80d002.avif",
@@ -236,7 +236,7 @@ var recipes = [
     servings: 4,
     recipeName: "BBQ Pulled Pork",
     recipeDescription: "Slow-cooked tender pork in smoky barbecue sauce",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "American",
     hasWarning: true,
     image: "./pics/photo-1529692236671-f1f6cf9683ba.avif",
@@ -282,7 +282,7 @@ var recipes = [
     recipeName: "French Onion Soup",
     recipeDescription:
       "Rich beef broth with caramelized onions and melted cheese",
-    levelOfDificulty: "Intermediate",
+    levelOfDifficulty: "Intermediate",
     recipeType: "Mediterranean",
     hasWarning: true,
     image: "./pics/photo-1547592166-23ac45744acd.avif",
@@ -327,7 +327,7 @@ var recipes = [
     servings: 2,
     recipeName: "Caesar Salad",
     recipeDescription: "Classic salad with crispy romaine and creamy dressing",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Mediterranean",
     hasWarning: false,
     image: "./pics/photo-1546793665-c74683f339c1.avif",
@@ -372,7 +372,7 @@ var recipes = [
     recipeName: "Thai Green Curry",
     recipeDescription:
       "Vibrant and aromatic curry with vegetables and coconut milk",
-    levelOfDificulty: "Intermediate",
+    levelOfDifficulty: "Intermediate",
     recipeType: "Asian",
     hasWarning: false,
     image: "./pics/photo-1455619452474-d2be8b1e70cd.avif",
@@ -418,7 +418,7 @@ var recipes = [
     servings: 4,
     recipeName: "Beef Tacos",
     recipeDescription: "Flavorful Mexican tacos with seasoned ground beef",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "American",
     hasWarning: false,
     image: "./pics/photo-1565299585323-38d6b0865b47.avif",
@@ -465,7 +465,7 @@ var recipes = [
     recipeName: "Mediterranean Quinoa Bowl",
     recipeDescription:
       "Healthy bowl with quinoa, vegetables, and tahini dressing",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Mediterranean",
     hasWarning: true,
     image: "./pics/photo-1546069901-ba9599a7e63c.avif",
@@ -511,7 +511,7 @@ var recipes = [
     recipeName: "Caprese Sandwich",
     recipeDescription:
       "Fresh Italian sandwich with mozzarella, tomato, and basil",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Italian",
     hasWarning: false,
     image: "./pics/photo-1509722747041-616f39b57569.avif",
@@ -557,7 +557,7 @@ var recipes = [
     recipeName: "Lasagna Bolognese",
     recipeDescription:
       "Layered Italian pasta with rich meat sauce and béchamel",
-    levelOfDificulty: "Intermediate",
+    levelOfDifficulty: "Intermediate",
     recipeType: "Italian",
     hasWarning: true,
     image: "./pics/photo-1574894709920-11b28e7367e3.avif",
@@ -603,7 +603,7 @@ var recipes = [
     servings: 4,
     recipeName: "Chicken Stir-Fry",
     recipeDescription: "Quick and healthy stir-fry with colorful vegetables",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Asian",
     hasWarning: false,
     image: "./pics/photo-1603133872878-684f208fb84b.avif",
@@ -650,7 +650,7 @@ var recipes = [
     recipeName: "Chicken Tikka Masala",
     recipeDescription:
       "Rich and creamy Indian curry with tender chicken pieces",
-    levelOfDificulty: "Intermediate",
+    levelOfDifficulty: "Intermediate",
     recipeType: "Asian",
     hasWarning: true,
     image: "./pics/photo-1565557623262-b51c2513a641.avif",
@@ -697,7 +697,7 @@ var recipes = [
     recipeName: "Creamy Spaghetti Carbonara",
     recipeDescription:
       "A classic Italian pasta dish with eggs, cheese, and pancetta",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Italian",
     hasWarning: false,
     image: "./pics/photo-1612874742237-6526221588e3.avif",
@@ -742,7 +742,7 @@ var recipes = [
     servings: 2,
     recipeName: "Shrimp Scampi",
     recipeDescription: "Garlicky shrimp in white wine butter sauce",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Seafood",
     hasWarning: false,
     image: "./pics/photo-1633504581786-316c8002b1b9.avif",
@@ -788,7 +788,7 @@ var recipes = [
     servings: 4,
     recipeName: "Classic Beef Burger",
     recipeDescription: "Juicy homemade burger with all the fixings",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "American",
     hasWarning: false,
     image: "./pics/photo-1568901346375-23c9450c58cd.avif",
@@ -833,7 +833,7 @@ var recipes = [
     servings: 2,
     recipeName: "Honey Garlic Salmon",
     recipeDescription: "Pan-seared salmon with a sweet and savory glaze",
-    levelOfDificulty: "Easy",
+    levelOfDifficulty: "Easy",
     recipeType: "Seafood",
     hasWarning: false,
     image: "./pics/photo-1467003909585-2f8a72700288.avif",
@@ -872,179 +872,153 @@ var recipes = [
   },
 ];
 
-function setRecipeLevelOfDifficultyAndType(recipe) {
-  var recipeTypeAndLevelOfDifficulty = document.getElementById(
+function displayAllImageContent(allImageContent) {
+  var recipeImage = document.getElementById("recipeImg");
+  var recipeOverallRating = document.getElementById("overallRating");
+  var recipeReviewsNumber = document.getElementById("reviewsNumber");
+  var recipePrepTimeNumber = document.getElementById("prepTimeNumber");
+  var recipeCookTimeNumber = document.getElementById("cookTimeNumber");
+  var recipeServingsNumber = document.getElementById("servingsNumber");
+
+  var recipeImg = allImageContent.image;
+  var overallRating = allImageContent.rating;
+  var reviewsNumber = allImageContent.reviewsNumber;
+  var prepTimeNumber = allImageContent.prepTime;
+  var cookTimeNumber = allImageContent.cookTime;
+  var servingsNumber = allImageContent.servings;
+
+  recipeImage.src = recipeImg;
+  recipeOverallRating.textContent = `${overallRating}`;
+  recipeReviewsNumber.textContent = `(${reviewsNumber} reviews)`;
+  recipePrepTimeNumber.textContent = `${prepTimeNumber} min`;
+  recipeCookTimeNumber.textContent = `${cookTimeNumber} min`;
+  recipeServingsNumber.textContent = `${servingsNumber} people`;
+}
+
+function displayLevelOfDifficultyAndType(recipeLevelOfDifficultyAndType) {
+  var difficultyLevelAndType = document.getElementById(
     "recipeLevelOfDifficultyAndType",
   );
-  recipeTypeAndLevelOfDifficulty.innerHTML = `<span class="green-rec fw-semibold py-1">${recipe.levelOfDificulty}</span>
-                                              <span class="blue-rec fw-semibold py-1">${recipe.recipeType}</span>`;
+  difficultyLevelAndType.innerHTML = "";
+  difficultyLevel = recipeLevelOfDifficultyAndType.levelOfDifficulty;
+  Type = recipeLevelOfDifficultyAndType.recipeType;
+  difficultyLevelAndType.innerHTML += `<span class="green-rec fw-semibold py-1">${difficultyLevel}</span>
+                                        <span class="blue-rec fw-semibold py-1">${Type}</span>`;
 }
 
-function setNameAndDescription(recipe) {
-  var recipeNameAndDescription = document.getElementById(
+function displayNameAndDescription(recipeNameAndDescription) {
+  var mealNameAndDescription = document.getElementById(
     "mealNameAndDescription",
   );
-  recipeNameAndDescription.innerHTML = `<h3 class="meal-name fw-bold">${recipe.recipeName}</h3>
-                                        <p class="meal-description m-0">${recipe.recipeDescription}</p>`;
+  var nameProperty = recipeNameAndDescription.recipeName;
+  var descriptionProperty = recipeNameAndDescription.recipeDescription;
+  mealNameAndDescription.innerHTML = "";
+  mealNameAndDescription.innerHTML += `<h3 class="meal-name fw-bold">${nameProperty}</h3>
+                                <p class="meal-description m-0">${descriptionProperty}</p>`;
 }
 
-function setImageContent(recipe) {
-  var setRecipeImage = document.getElementById("recipeImage");
-  setRecipeImage.innerHTML = `<img src="${recipe.image}" alt="Food image">
-                              <div class="rating position-absolute py-2 px-3">
-                                  <div class="rating-text d-flex align-items-center">
-                                      <i class="fa-solid fa-star fs-6 lh-base me-2"></i>
-                                      <span class="overall-rating me-2 fs-6 fw-semibold lh-base">${recipe.rating}</span>
-                                      <span class="reviews-number">(${recipe.reviewsNumber} reviews)</span>
-                                  </div>
-                              </div>
-                              <div class="meal-info p-4 rounded-4 position-absolute">
-                                  <div class="meal-info-content text-center gap-3 d-grid">
-                                      <div class="prep-time text-center">
-                                          <i class="fa-solid fa-clock fs-4 text-center m-0"></i>
-                                          <p class="prep-time-text m-0 text-center">Prep Time</p>
-                                          <p class="prep-time-number fs-6 lh-base fw-bold text-center m-0">${recipe.prepTime} min</p>
-                                      </div>
-                                      <div class="cook-time text-center">
-                                          <i class="fa-solid fa-fire-burner fs-4 text-center m-0"></i>
-                                          <p class="cook-time-text m-0 text-center">Cook Time</p>
-                                          <p class="cook-time-number fs-6 lh-base fw-bold text-center m-0">${recipe.cookTime} min</p>
-                                      </div>
-                                      <div class="servings text-center">
-                                          <i class="fa-solid fa-users fs-4 text-center m-0"></i>
-                                          <p class="servings-text m-0 text-center">Servings</p>
-                                          <p class="servings-number fs-6 lh-base fw-bold text-center m-0">${recipe.servings} people</p>
-                                      </div>
-                                  </div>
-                              </div>`;
-}
-
-function setRecipeWarning(recipe) {
-  var warnings = document.getElementById("recipeContainer");
-  if (recipe.hasWarning) {
-    warnings.innerHTML = `<div class="warning-red-rectangle p-3 mb-4 rounded-3">
-                          <div class="warning-icon-text d-flex align-items-center">
-                              <i class="fa-solid fa-triangle-exclamation"></i>
-                              <div class="warning-text">
-                                  <p class="red-text1 fs-6 fw-semibold lh-base m-0">Extended Preparation Time</p>
-                                  <p class="red-text2 m-0">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
-                              </div>
-                          </div>
-                      </div>`;
+function displayRecipeWarning(recipeWarning) {
+  var warning = document.getElementById("recipeContainer");
+  if (recipeWarning.hasWarning) {
+    warning.innerHTML = `<div class="warning-red-rectangle p-3 mb-4 rounded-3">
+                                    <div class="warning-icon-text d-flex align-items-center">
+                                        <i class="fa-solid fa-triangle-exclamation"></i>
+                                        <div class="warning-text">
+                                            <p class="red-text1 fs-6 fw-semibold lh-base m-0">Extended Preparation Time</p>
+                                            <p class="red-text2 m-0">This recipe requires more than 45 minutes to prepare. Plan accordingly!</p>
+                                        </div>
+                                    </div>
+                                </div>`;
   } else {
-    warnings.innerHTML = "";
+    warning.innerHTML = "";
   }
 }
 
-function setIngredients(recipe) {
+function displayIngredients(recipeIngredients) {
   var ingredientsList = document.getElementById("ingredientsList");
   ingredientsList.innerHTML = "";
-  for (var i = 0; i < recipe.ingredients.length; i++) {
+  for (var i = 0; i < recipeIngredients.length; ++i) {
+    var Currentingredients = recipeIngredients[i];
     ingredientsList.innerHTML += `<li class="ingredients-li d-flex align-items-start">
-        <div class="ingredients-number fw-bold d-flex justify-content-center align-items-center flex-shrink-0 rounded-circle">${i + 1}</div>
-        <span>${recipe.ingredients[i]}</span>
-    </li>`;
+             <div class="ingredients-number fw-bold d-flex justify-content-center align-items-center flex-shrink-0 rounded-circle">${i + 1}</div>
+            <span>${Currentingredients}</span>
+        </li>`;
   }
 }
 
-function setInstructions(recipe) {
-  var instructionsList = document.getElementById("instructions-tab-pane");
-  instructionsList.innerHTML = "";
-  for (var i = 0; i < recipe.instructions.length; i++) {
-    instructionsList.innerHTML += `<div class="instruction-number-and-text mb-4 d-flex align-items-start">
-        <div class="step-number me-3 fw-bold rounded-4 d-flex justify-content-center align-items-center flex-shrink-0">${i + 1}</div>
-        <div class="step-text pt-2">
-            <p class="step-text-p m-0">${recipe.instructions[i]}</p>
-        </div>
-    </div>`;
+function displayInstructions(recipeInstructions) {
+  var instructionsHTMLList = document.getElementById("instructions-tab-pane");
+  instructionsHTMLList.innerHTML = "";
+  for (var i = 0; i < recipeInstructions.length; ++i) {
+    var currentInstruction = recipeInstructions[i];
+    instructionsHTMLList.innerHTML += `<div class="instruction-number-and-text mb-4 d-flex align-items-start">
+            <div class="step-number me-3 fw-bold rounded-4 d-flex justify-content-center align-items-center flex-shrink-0">${i + 1}</div>
+                <div class="step-text pt-2">
+                    <p class="step-text-p m-0">${currentInstruction}</p>
+                </div>
+        </div>`;
   }
 }
 
-function setNutritions(recipe) {
-  var nutritionsList = document.getElementById("nutritionTabContent");
-  var nutrition = recipe.nutrition;
-  nutritionsList.innerHTML = `<div class="calories-content p-3 d-flex justify-content-between align-items-center">
-                              <div class="calories d-flex align-items-center">
-                                  <div class="calories-icon d-flex justify-content-center align-items-center rounded-3">
-                                      <i class="fa-solid fa-fire"></i>
-                                  </div>
-                                  <span class="calories-text fs-6 fw-medium lh-base">Calories</span>
-                              </div>
-                              <span class="nutrition-unit fw-bold">${nutrition.calories} kcal</span>
-                          </div>
-                          <div class="protein-content p-3 d-flex justify-content-between align-items-center">
-                              <div class="protein d-flex align-items-center">
-                                  <div class="protein-icon d-flex justify-content-center align-items-center rounded-3">
-                                      <i class="fa-solid fa-dumbbell"></i>
-                                  </div>
-                                  <span class="protein-text fs-6 fw-medium lh-base">Protein</span>
-                              </div>
-                              <span class="nutrition-unit fw-bold">${nutrition.protein}g</span>
-                          </div>
-                          <div class="carbohydrates-content p-3 d-flex justify-content-between align-items-center">
-                              <div class="carbohydrates d-flex align-items-center">
-                                  <div class="carbohydrates-icon d-flex justify-content-center align-items-center rounded-3">
-                                      <i class="fa-solid fa-wheat-awn"></i>
-                                  </div>
-                                  <span class="carbohydrates-text fs-6 fw-medium lh-base">Carbohydrates</span>
-                              </div>
-                              <span class="nutrition-unit fw-bold">${nutrition.carbohydrates}g</span>
-                          </div>
-                          <div class="fat-content p-3 d-flex justify-content-between align-items-center">
-                              <div class="fat d-flex align-items-center">
-                                  <div class="fat-icon d-flex justify-content-center align-items-center rounded-3">
-                                      <i class="fa-solid fa-droplet"></i>
-                                  </div>
-                                  <span class="fat-text fs-6 fw-medium lh-base">Fat</span>
-                              </div>
-                              <span class="nutrition-unit fw-bold">${nutrition.fat}g</span>
-                          </div>
-                          <div class="fiber-content p-3 d-flex justify-content-between align-items-center">
-                              <div class="fiber d-flex align-items-center">
-                                  <div class="fiber-icon d-flex justify-content-center align-items-center rounded-3">
-                                      <i class="fa-solid fa-seedling"></i>
-                                  </div>
-                                  <span class="fiber-text fs-6 fw-medium lh-base">Fiber</span>
-                              </div>
-                              <span class="nutrition-unit fw-bold">${nutrition.fiber}g</span>
-                          </div>
-                          <div class="sodium-content p-3 d-flex justify-content-between align-items-center">
-                              <div class="sodium d-flex align-items-center">
-                                  <div class="sodium-icon d-flex justify-content-center align-items-center rounded-3">
-                                      <i class="fa-solid fa-cube"></i>
-                                  </div>
-                                  <span class="sodium-text fs-6 fw-medium lh-base">Sodium</span>
-                              </div>
-                              <span class="nutrition-unit fw-bold">${nutrition.sodium}mg</span>
-                          </div>`;
+function displayNutritions(recipeNutritions) {
+  var caloriesOfMeal = document.getElementById("caloriesId");
+  var proteinOfMeal = document.getElementById("proteinId");
+  var carbohydratesOfMeal = document.getElementById("carbohydratesId");
+  var fatOfMeal = document.getElementById("fatId");
+  var fiberOfMeal = document.getElementById("fiberId");
+  var sodiumOfMeal = document.getElementById("sodiumId");
+
+  var nutritionCalories = recipeNutritions.calories;
+  var nutritionProtein = recipeNutritions.protein;
+  var nutritionCarbohydrates = recipeNutritions.carbohydrates;
+  var nutritionFat = recipeNutritions.fat;
+  var nutritionFiber = recipeNutritions.fiber;
+  var nutritionSodium = recipeNutritions.sodium;
+
+  caloriesOfMeal.innerHTML = `${nutritionCalories} kcal`;
+  proteinOfMeal.innerHTML = `${nutritionProtein}g`;
+  carbohydratesOfMeal.innerHTML = `${nutritionCarbohydrates}g`;
+  fatOfMeal.innerHTML = `${nutritionFat}g`;
+  fiberOfMeal.innerHTML = `${nutritionFiber}g`;
+  sodiumOfMeal.innerHTML = `${nutritionSodium}mg`;
 }
 
-function setChefsTips(recipe) {
+function displayChefsTips(recipeChefsTips) {
   var chefsTips = document.getElementById("chefsTipContent");
   chefsTips.innerHTML = "";
-  for (var i = 0; i < recipe.chefsTips.length; i++) {
+  for (var i = 0; i < recipeChefsTips.length; ++i) {
+    var currentChefsTips = recipeChefsTips[i];
     chefsTips.innerHTML += `<div class="tip-one p-3 mb-3 d-flex align-items-start">
-                            <i class="fa-solid fa-circle-check mt-1"></i>
-                            <p class="m-0">${recipe.chefsTips[i]}</p>
-                        </div>`;
+                                <i class="fa-solid fa-circle-check mt-1"></i>
+                                <p class="m-0">${currentChefsTips}</p>
+                            </div>`;
   }
 }
 
-function displayRecipe(recipe) {
-  setRecipeLevelOfDifficultyAndType(recipe);
-  setNameAndDescription(recipe);
-  setImageContent(recipe);
-  setRecipeWarning(recipe);
-  setIngredients(recipe);
-  setInstructions(recipe);
-  setNutritions(recipe);
-  setChefsTips(recipe);
+function getRandomIndex(arrayLength) {
+  var randomIndex = Math.floor(Math.random() * arrayLength);
+  return randomIndex;
 }
 
-function getRandomRecipe() {
-  var randomRecipe = Math.floor(Math.random() * recipes.length);
-  var recipe = recipes[randomRecipe];
-  displayRecipe(recipe);
-  return recipe;
+function showRandomRecipe() {
+  var randomIndex = getRandomIndex(recipes.length);
+  var randomRecipe = recipes[randomIndex];
+
+  displayAllImageContent(randomRecipe);
+  displayLevelOfDifficultyAndType(randomRecipe);
+  displayNameAndDescription(randomRecipe);
+  displayRecipeWarning(randomRecipe);
+
+  var ingredientsFullList = randomRecipe.ingredients;
+  displayIngredients(ingredientsFullList);
+
+  var instructionsFullList = randomRecipe.instructions;
+  displayInstructions(instructionsFullList);
+
+  var ChefsTipsFullList = randomRecipe.chefsTips;
+  displayChefsTips(ChefsTipsFullList);
+
+  var nutritionFullObj = randomRecipe.nutrition;
+  displayNutritions(nutritionFullObj);
 }
-getRandomRecipe();
+showRandomRecipe();

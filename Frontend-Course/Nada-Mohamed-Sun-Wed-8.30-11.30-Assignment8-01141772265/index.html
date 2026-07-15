@@ -19,8 +19,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-xl navbar-section p-0 w-100 z-3"
-        id="whatsForDinnerNav">
+    <nav class="navbar navbar-expand-xl navbar-section p-0 w-100 z-3" id="whatsForDinnerNav">
         <div class="navbar-container container-fluid justify-content-between py-3 px-4">
             <!-- NAVBAR LOGO AND WEBSITE NAME -->
             <div class="nav-logo d-flex align-items-center">
@@ -82,7 +81,37 @@
     <main class="px-4 m-auto m-xl-0">
         <section class="border-1">
             <div class="recipes-content">
-                <div id="recipeImage" class="recipes-left-content"></div>
+                <div class="recipes-left-content">
+                    <img id="recipeImg" alt="Food image">
+                    <div class="rating position-absolute py-2 px-3">
+                        <div class="rating-text d-flex align-items-center">
+                            <i class="fa-solid fa-star fs-6 lh-base me-2"></i>
+                            <span id="overallRating" class="overall-rating me-2 fs-6 fw-semibold lh-base"></span>
+                            <span id="reviewsNumber" class="reviews-number"></span>
+                        </div>
+                    </div>
+                    <div class="meal-info p-4 rounded-4 position-absolute">
+                        <div class="meal-info-content text-center gap-3 d-grid">
+                            <div class="prep-time text-center">
+                                <i class="fa-solid fa-clock fs-4 text-center m-0"></i>
+                                <p class="prep-time-text m-0 text-center">Prep Time</p>
+                                <p id="prepTimeNumber" class="prep-time-number fs-6 lh-base fw-bold text-center m-0">
+                                </p>
+                            </div>
+                            <div class="cook-time text-center">
+                                <i class="fa-solid fa-fire-burner fs-4 text-center m-0"></i>
+                                <p class="cook-time-text m-0 text-center">Cook Time</p>
+                                <p id="cookTimeNumber" class="cook-time-number fs-6 lh-base fw-bold text-center m-0">
+                                </p>
+                            </div>
+                            <div class="servings text-center">
+                                <i class="fa-solid fa-users fs-4 text-center m-0"></i>
+                                <p class="servings-text m-0 text-center">Servings</p>
+                                <p id="servingsNumber" class="servings-number fs-6 lh-base fw-bold text-center m-0"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="recipes-right-content h-100">
                     <div class="meal-description mb-4 d-flex flex-row justify-content-between align-items-start">
@@ -125,13 +154,15 @@
                                 class="nav-link pt-0 pb-2 fs-6 fw-semibold lh-base border-2 d-flex justify-content-center align-items-center"
                                 id="nutritionTab" data-bs-toggle="tab" data-bs-target="#nutrition-tab-pane"
                                 type="button" role="tab" aria-controls="nutrition-tab-pane" aria-selected="false">
-                                <i class="fa-solid fa-chart-pie my-0 ms-0 me-1 fs-6 fw-semibold lh-base me-1"></i> Nutrition
+                                <i class="fa-solid fa-chart-pie my-0 ms-0 me-1 fs-6 fw-semibold lh-base me-1"></i>
+                                Nutrition
                             </button>
                             <button
                                 class="nav-link pt-0 pb-2 fs-6 fw-semibold lh-base border-2 d-flex justify-content-center align-items-center"
                                 id="chefsTipTab" data-bs-toggle="tab" data-bs-target="#chefs-tip-tab-pane" type="button"
                                 role="tab" aria-controls="chefs-tip-tab-pane" aria-selected="false">
-                                <i class="fa-solid fa-lightbulb my-0 ms-0 me-1 fs-6 fw-semibold lh-base me-1"></i> Chef's
+                                <i class="fa-solid fa-lightbulb my-0 ms-0 me-1 fs-6 fw-semibold lh-base me-1"></i>
+                                Chef's
                                 Tips
                             </button>
                         </div>
@@ -153,7 +184,69 @@
                         <!-- NUTRITION TAB -->
                         <div class="nutrition-tab-content tab-pane fade" id="nutrition-tab-pane" role="tabpanel"
                             aria-labelledby="nutritionTab" tabindex="0">
-                            <div id="nutritionTabContent" class="nutrition-tab-content-container gap-3 d-grid"></div>
+                            <div id="nutritionTabContent" class="nutrition-tab-content-container gap-3 d-grid">
+                                <div class="calories-content p-3 d-flex justify-content-between align-items-center">
+                                    <div class="calories d-flex align-items-center">
+                                        <div
+                                            class="calories-icon d-flex justify-content-center align-items-center rounded-3">
+                                            <i class="fa-solid fa-fire"></i>
+                                        </div>
+                                        <span class="calories-text fs-6 fw-medium lh-base">Calories</span>
+                                    </div>
+                                    <span id="caloriesId" class="nutrition-unit fw-bold"></span>
+                                </div>
+                                <div class="protein-content p-3 d-flex justify-content-between align-items-center">
+                                    <div class="protein d-flex align-items-center">
+                                        <div
+                                            class="protein-icon d-flex justify-content-center align-items-center rounded-3">
+                                            <i class="fa-solid fa-dumbbell"></i>
+                                        </div>
+                                        <span class="protein-text fs-6 fw-medium lh-base">Protein</span>
+                                    </div>
+                                    <span id="proteinId" class="nutrition-unit fw-bold"></span>
+                                </div>
+                                <div
+                                    class="carbohydrates-content p-3 d-flex justify-content-between align-items-center">
+                                    <div class="carbohydrates d-flex align-items-center">
+                                        <div
+                                            class="carbohydrates-icon d-flex justify-content-center align-items-center rounded-3">
+                                            <i class="fa-solid fa-wheat-awn"></i>
+                                        </div>
+                                        <span class="carbohydrates-text fs-6 fw-medium lh-base">Carbohydrates</span>
+                                    </div>
+                                    <span id="carbohydratesId" class="nutrition-unit fw-bold"></span>
+                                </div>
+                                <div class="fat-content p-3 d-flex justify-content-between align-items-center">
+                                    <div class="fat d-flex align-items-center">
+                                        <div
+                                            class="fat-icon d-flex justify-content-center align-items-center rounded-3">
+                                            <i class="fa-solid fa-droplet"></i>
+                                        </div>
+                                        <span class="fat-text fs-6 fw-medium lh-base">Fat</span>
+                                    </div>
+                                    <span id="fatId" class="nutrition-unit fw-bold"></span>
+                                </div>
+                                <div class="fiber-content p-3 d-flex justify-content-between align-items-center">
+                                    <div class="fiber d-flex align-items-center">
+                                        <div
+                                            class="fiber-icon d-flex justify-content-center align-items-center rounded-3">
+                                            <i class="fa-solid fa-seedling"></i>
+                                        </div>
+                                        <span class="fiber-text fs-6 fw-medium lh-base">Fiber</span>
+                                    </div>
+                                    <span id="fiberId" class="nutrition-unit fw-bold"></span>
+                                </div>
+                                <div class="sodium-content p-3 d-flex justify-content-between align-items-center">
+                                    <div class="sodium d-flex align-items-center">
+                                        <div
+                                            class="sodium-icon d-flex justify-content-center align-items-center rounded-3">
+                                            <i class="fa-solid fa-cube"></i>
+                                        </div>
+                                        <span class="sodium-text fs-6 fw-medium lh-base">Sodium</span>
+                                    </div>
+                                    <span id="sodiumId" class="nutrition-unit fw-bold"></span>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- CHEF'S TIP TAB -->
@@ -166,7 +259,7 @@
 
                     <!-- TRY ANOTHER RECIPE BUTTON -->
                     <div class="try-another-recipe-button pt-4 border-top d-flex align-items-center">
-                        <button onclick="getRandomRecipe()" id="tryAnotherRecipeBtn"
+                        <button onclick="showRandomRecipe()"
                             class="try-another-recipe px-4 border-0 fs-6 fw-semibold lh-base py-2 px-3 px-md-4">
                             <i class="fa-solid fa-rotate me-1 fw-semibold lh-base me-md-2"></i>
                             Try Another Recipe

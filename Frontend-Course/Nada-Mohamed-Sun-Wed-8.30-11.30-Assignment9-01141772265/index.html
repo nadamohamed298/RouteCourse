@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactHub - Smart Contact Manager</title>
+    <link rel="icon" href="./pics/favicon.png" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- FONT AWESOME LOCAL FILE -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- BOOTSTRAP LOCAL FILE -->
+    <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav
+        class="navbar navbar-expand-lg bg-white p-0 position-fixed z-3 top-0 start-0 w-100 d-flex justify-content-center align-items-center">
+        <div class="navbar-container container m-0 px-1 px-xl-3 m-xl-auto">
+            <!-- Logo -->
+            <div class="contact-hub-logo-text d-flex align-items-center" href="#">
+                <div class="contact-hub-logo-box">
+                    <i class="fa-solid fa-address-book"></i>
+                </div>
+                <div class="contact-hub-text">
+                    <h1 class="logo-title fs-4 fw-bold m-0">Contact<span>Hub</span></h1>
+                    <p class="logo-subtitle m-0 fw-medium d-none d-md-block">Smart Contact Manager</p>
+                </div>
+            </div>
+            <div class="nav-right-content d-flex align-items-center">
+                <button class="add-btn fw-semibold d-flex gap-1 align-items-center">
+                    <i class="fa-solid fa-plus"></i>
+                    Add<span class="d-none d-md-block">Contact</span>
+                </button>
+                <button class="icon-btn d-flex justify-content-center align-items-center d-none d-md-block">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
+                <button class="icon-btn d-flex justify-content-center align-items-center d-none d-md-block">
+                    <i class="fa-solid fa-gear"></i>
+                </button>
+                <div class="nav-profile-picture">
+                    <img src="./pics/avatar-3.jpg" class="profile-img" alt="">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="main-section">
+        <div class="main-section-container container">
+            <!-- Statistics Section -->
+            <section class="statistics-section">
+                <div class="cards-container d-flex justify-content-between align-items-center">
+                    <!-- Total -->
+                    <div class="cards rounded-4 w-100">
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-users fs-6 lh-base"></i>
+                        </div>
+                        <div class="stat-card">
+                            <p class="stat-title fw-medium">TOTAL</p>
+                            <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                        </div>
+                    </div>
+                    <!-- Favorites -->
+                    <div class="cards rounded-4 w-100">
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-star fs-6 lh-base"></i>
+                        </div>
+                        <div class="stat-card">
+                            <p class="stat-title fw-medium">FAVORITES</p>
+                            <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                        </div>
+                    </div>
+                    <!-- Emergency -->
+                    <div class="cards rounded-4 w-100">
+                        <div class="stat-icon red">
+                            <i class="fa-solid fa-heart-pulse fs-6 lh-base"></i>
+                        </div>
+                        <div class="stat-card">
+                            <p class="stat-title fw-medium">EMERGENCY</p>
+                            <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Content Section -->
+            <div class="content-section m-auto">
+                <div class="flex-container d-flex">
+                    <!-- Left Content -->
+                    <div class="all-contacts-search-input">
+                        <!-- Heading -->
+                        <section class="all-contacts-search">
+                            <div class="contacts-heading">
+                                <h2 class="all-contacts-text fw-bold m-0">All Contacts</h2>
+                                <p class="mt-1 mb-0 mx-0">Manage and organize your 0 contacts</p>
+                            </div>
+                            <!-- Search -->
+                            <div class="search-box mb-4">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input id="searchInput" name="search" type="text"
+                                    placeholder="Search by name, phone, or email...">
+                            </div>
+                        </section>
+                        <!-- Empty State -->
+                        <section class="empty-state">
+                            <div class="empty-icon rounded-4 d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-address-book"></i>
+                            </div>
+                            <p class="no-contacts-found-text fw-medium m-0">No contacts found</p>
+                            <p class="click-add-contact-text mt-1 mb-0">Click "Add Contact" to get started</p>
+                        </section>
+                    </div>
+                    <!-- Sidebar -->
+                    <aside class="sidebar">
+                        <!-- Favorites -->
+                        <div class="side-card side-card1">
+                            <div class="side-header favorite-header">
+                                <div class="mini-icon orange">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="sidebar-card-title">
+                                    <h2 class="fs-6 lh-base fw-semibold m-0">Favorites</h2>
+                                    <p class="sidebar-card-p m-0">Quick access to starred contacts</p>
+                                </div>
+                            </div>
+                            <div class="fav-card-bottom">
+                                <div class="fav-card-text">
+                                    <p class="side-body m-0">No favorites yet</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Emergency -->
+                        <div class="side-card side-card2">
+                            <div class="side-header emergency-header">
+                                <div class="mini-icon red">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <div class="sidebar-card-title">
+                                    <h2 class="fs-6 lh-base fw-semibold m-0">Emergency</h2>
+                                    <p class="sidebar-card-p m-0">Important contacts for urgent calls</p>
+                                </div>
+                            </div>
+                            <div class="fav-card-bottom">
+                                <div class="fav-card-text">
+                                    <p class="side-body m-0">No emergency contacts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="add-new-contact-modal">
+
+    </div>
+    <!-- BOOTSTRAP LOCAL FILE -->
+    <script src="./Bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
