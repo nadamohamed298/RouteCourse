@@ -18,13 +18,13 @@
     <link rel="stylesheet" href="./Bootstrap/bootstrap.min.css">
     <!-- CSS FILE -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 
 <body>
     <nav
         class="navbar navbar-expand-lg bg-white p-0 position-fixed z-3 top-0 start-0 w-100 d-flex justify-content-center align-items-center">
         <div class="navbar-container container m-0 px-1 px-xl-3 m-xl-auto">
-            <!-- Logo -->
             <div class="contact-hub-logo-text d-flex align-items-center" href="#">
                 <div class="contact-hub-logo-box">
                     <i class="fa-solid fa-address-book"></i>
@@ -35,10 +35,12 @@
                 </div>
             </div>
             <div class="nav-right-content d-flex align-items-center">
-                <button class="add-btn fw-semibold d-flex gap-1 align-items-center">
+                <button id="addContactBtn" class="add-btn btn btn-primary fw-semibold d-flex gap-1 align-items-center"
+                    type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <i class="fa-solid fa-plus"></i>
                     Add<span class="d-none d-md-block">Contact</span>
                 </button>
+
                 <button class="icon-btn d-flex justify-content-center align-items-center d-none d-md-block">
                     <i class="fa-solid fa-bell"></i>
                 </button>
@@ -52,74 +54,70 @@
         </div>
     </nav>
     <main class="main-section">
-        <div class="main-section-container container">
-            <!-- Statistics Section -->
+        <div class="main-section-container container-xxl">
             <section class="statistics-section">
                 <div class="cards-container d-flex justify-content-between align-items-center">
-                    <!-- Total -->
-                    <div class="cards rounded-4 w-100">
+                    <div class="cards rounded-4">
                         <div class="stat-icon blue">
                             <i class="fa-solid fa-users fs-6 lh-base"></i>
                         </div>
                         <div class="stat-card">
                             <p class="stat-title fw-medium">TOTAL</p>
-                            <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                            <div id="totalCounter" class="counder-card">
+                                <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                            </div>
                         </div>
                     </div>
-                    <!-- Favorites -->
-                    <div class="cards rounded-4 w-100">
+                    <div class="cards rounded-4">
                         <div class="stat-icon orange">
                             <i class="fa-solid fa-star fs-6 lh-base"></i>
                         </div>
                         <div class="stat-card">
                             <p class="stat-title fw-medium">FAVORITES</p>
-                            <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                            <div id="favoritesCounter" class="counder-card">
+                                <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                            </div>
                         </div>
                     </div>
-                    <!-- Emergency -->
-                    <div class="cards rounded-4 w-100">
+                    <div class="cards rounded-4">
                         <div class="stat-icon red">
                             <i class="fa-solid fa-heart-pulse fs-6 lh-base"></i>
                         </div>
                         <div class="stat-card">
                             <p class="stat-title fw-medium">EMERGENCY</p>
-                            <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                            <div id="emergencyCounter" class="counder-card">
+                                <h2 class="zero-text m-0 fs-4 fw-bold">0</h2>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!-- Content Section -->
             <div class="content-section m-auto">
                 <div class="flex-container d-flex">
-                    <!-- Left Content -->
-                    <div class="all-contacts-search-input">
-                        <!-- Heading -->
+                    <div id="searchAllContacts" class="all-contacts-search-input">
                         <section class="all-contacts-search">
                             <div class="contacts-heading">
                                 <h2 class="all-contacts-text fw-bold m-0">All Contacts</h2>
                                 <p class="mt-1 mb-0 mx-0">Manage and organize your 0 contacts</p>
                             </div>
-                            <!-- Search -->
                             <div class="search-box mb-4">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                                <input id="searchInput" name="search" type="text"
+                                <input id="searchInput" class="search-input" name="search" type="text"
                                     placeholder="Search by name, phone, or email...">
                             </div>
                         </section>
-                        <!-- Empty State -->
-                        <section class="empty-state">
+                        <section id="emptyState" class="empty-state">
                             <div class="empty-icon rounded-4 d-flex justify-content-center align-items-center">
                                 <i class="fa-solid fa-address-book"></i>
                             </div>
                             <p class="no-contacts-found-text fw-medium m-0">No contacts found</p>
                             <p class="click-add-contact-text mt-1 mb-0">Click "Add Contact" to get started</p>
                         </section>
+                        <section id="addedContactCard" class="added-contact-card"></section>
                     </div>
-                    <!-- Sidebar -->
                     <aside class="sidebar">
-                        <!-- Favorites -->
                         <div class="side-card side-card1">
-                            <div class="side-header favorite-header">
+                            <div class="side-header favorite-header dn">
                                 <div class="mini-icon orange">
                                     <i class="fa-solid fa-star"></i>
                                 </div>
@@ -128,13 +126,35 @@
                                     <p class="sidebar-card-p m-0">Quick access to starred contacts</p>
                                 </div>
                             </div>
+
                             <div class="fav-card-bottom">
                                 <div class="fav-card-text">
                                     <p class="side-body m-0">No favorites yet</p>
                                 </div>
+
                             </div>
+
+                            <!-- ASIDE ADDED CONTACT CARD (FAVORITES) -->
+                            <div
+                                class="aside-favourites-added-contact-card-container d-flex justify-content-center align-items-center d-none">
+                                <div class="aside-favorites-added-contact-card d-flex align-items-center">
+                                    <div class="favorites-name-initials flex-shrink-0">
+                                        <div
+                                            class="favorites-name-initials-box fw-semibold d-flex justify-content-center align-items-center">
+                                            AH</div>
+                                    </div>
+                                    <div class="favorites-name-phone-number">
+                                        <h4 class="fw-medium m-0">Amany Mokhtar El Leithy Ahmed Hassan</h4>
+                                        <p class="pn-text m-0">01024221099</p>
+                                    </div>
+                                    <a href="tel:"
+                                        class="favorites-phone-icon-box d-flex justify-content-center align-items-center flex-shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </a>
+                                </div>
+                            </div>
+
                         </div>
-                        <!-- Emergency -->
                         <div class="side-card side-card2">
                             <div class="side-header emergency-header">
                                 <div class="mini-icon red">
@@ -145,9 +165,30 @@
                                     <p class="sidebar-card-p m-0">Important contacts for urgent calls</p>
                                 </div>
                             </div>
+
                             <div class="fav-card-bottom">
                                 <div class="fav-card-text">
                                     <p class="side-body m-0">No emergency contacts</p>
+                                </div>
+                            </div>
+
+                            <!-- ASIDE ADDED CONTACT CARD (EMERGENCY) -->
+                            <div
+                                class="aside-emergency-added-contact-card-container d-flex justify-content-center align-items-center d-none">
+                                <div class="aside-emergency-added-contact-card d-flex align-items-center">
+                                    <div class="emergency-name-initials flex-shrink-0">
+                                        <div
+                                            class="emergency-name-initials-box fw-semibold d-flex justify-content-center align-items-center">
+                                            AH</div>
+                                    </div>
+                                    <div class="emergency-name-phone-number">
+                                        <h4 class="fw-medium m-0">Amany Mokhtar El Leithy Ahmed Hassan</h4>
+                                        <p class="pn-text m-0">01024221099</p>
+                                    </div>
+                                    <a href="tel:"
+                                        class="emergency-phone-icon-box d-flex justify-content-center align-items-center flex-shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -156,11 +197,117 @@
             </div>
         </div>
     </main>
-    <div class="add-new-contact-modal">
 
+    <!-- Add Contact Modal -->
+    <div class="add-new-contact-modal modal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5 fw-bold p-0" id="staticBackdropLabel">Add New Contact</h2>
+                    <button id="closeBtn" type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="contactForm" class="row g-3">
+                        <div
+                            class="change-photo-container col-12 d-flex flex-column align-items-center text-center pb-2">
+                            <div class="contact-photo-upload">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <label class="photo-change-link d-flex align-items-center gap-2 py-2 px-3 fw-medium border"
+                                for="contactPhoto">
+                                <i class="fa-solid fa-camera"></i>
+                                Change Photo
+                            </label>
+                            <input type="file" class="d-none" id="contactPhoto">
+                        </div>
+
+                        <div class="label-input col-12 p-0 m-0">
+                            <label for="fullName" class="form-label modal-form-label fw-medium">Full Name <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control modal-form-input" id="fullName"
+                                placeholder="Enter full name" required>
+                            <div id="fullNameError" class="full-name-error-text d-none">
+                                <p class="input-error-message">Name should contain only letters and spaces (2-50
+                                    characters)</p>
+                            </div>
+                        </div>
+
+                        <div class="label-input col-12 p-0 m-0">
+                            <label for="phoneNumber" class="form-label modal-form-label fw-medium">Phone Number <span
+                                    class="text-danger">*</span></label>
+                            <input type="tel" class="form-control modal-form-input" id="phoneNumber"
+                                placeholder="e.g., 01012345678" required>
+                            <div id="phoneNumberError" class="phone-number-error-text d-none">
+                                <p class="input-error-message">Please enter a valid Egyptian phone number</p>
+                            </div>
+                        </div>
+
+                        <div class="label-input col-12 p-0 m-0">
+                            <label for="emailAddress" class="form-label modal-form-label fw-medium">Email
+                                Address</label>
+                            <input type="email" class="form-control modal-form-input" id="emailAddress"
+                                placeholder="name@example.com">
+                            <div id="emailAddressError" class="email-address-error-text d-none">
+                                <p class="input-error-message">Please enter a valid email address</p>
+                            </div>
+                        </div>
+
+                        <div class="label-input col-12 p-0 m-0">
+                            <label for="address" class="form-label modal-form-label fw-medium">Address</label>
+                            <input type="text" class="form-control modal-form-input" id="address"
+                                placeholder="Enter address">
+                        </div>
+
+                        <div class="label-input col-12 p-0 m-0">
+                            <label for="group" class="form-label modal-form-label fw-medium">Group</label>
+                            <select class="form-select modal-form-input" id="group">
+                                <option value="" selected>Select a group</option>
+                                <option value="Family">Family</option>
+                                <option value="Friends">Friends</option>
+                                <option value="Work">Work</option>
+                                <option value="School">School</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="label-input col-12 p-0 m-0">
+                            <label for="notes" class="form-label modal-form-label fw-medium">Notes</label>
+                            <textarea class="form-control modal-form-input" id="notes" rows="3"
+                                placeholder="Add notes about this contact"></textarea>
+                        </div>
+
+                        <div class="label-input col-12 p-0 m-0 d-flex gap-4">
+                            <div class="form-check d-flex align-items-center gap-2 p-0">
+                                <input class="checkbox-input" type="checkbox" name="favorite" id="isFavorite">
+                                <label class="form-check-label" for="isFavorite"><i
+                                        class="star-icon fa-solid fa-star me-1"></i>Favorite</label>
+                            </div>
+                            <div class="form-check d-flex align-items-center gap-2 p-0">
+                                <input class="checkbox-input" type="checkbox" name="emergency" id="isEmergency">
+                                <label class="form-check-label" for="isEmergency"><i
+                                        class="heart-icon fa-solid fa-heart-pulse me-1"></i>Emergency</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-btns modal-footer p-0">
+                        <button id="cancelSaving" type="button" class="cancel-button btn-secondary fw-semibold border-0"
+                            data-bs-dismiss="modal">Cancel</button>
+                        <button id="saveContact" class="save-button btn btn-primary fw-semibold"><i
+                                class="fa-solid fa-check me-2"></i>Save
+                            Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <!-- BOOTSTRAP LOCAL FILE -->
     <script src="./Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="./main.js"></script>
+
 </body>
 
 </html>
