@@ -390,11 +390,18 @@ function deleteContact(index) {
     cancelButtonColor: "#6B7280",
     confirmButtonText: "Yes, delete it!",
   }).then(function (result) {
-    if (result.isConfirmed === true) {
+    if (result.isConfirmed) {
       contacts.splice(index, 1);
       saveContactsToLocalStorage(contacts);
       displayContacts(contacts);
-      Swal.fire("Deleted!", "Contact has been deleted.", "success");
+
+      Swal.fire({
+        title: "Deleted!",
+        text: "Contact has been deleted.",
+        icon: "success",
+        showConfirmButton: false,
+        timer: 2500
+      });
     }
   });
 }
