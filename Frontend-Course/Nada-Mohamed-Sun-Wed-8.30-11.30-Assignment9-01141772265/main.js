@@ -22,7 +22,7 @@ function loadContactsFromLocalStorage() {
 function getInitials(name) {
   var nameParts = name.trim().split(" ");
   if (nameParts.length === 1) {
-    return nameParts[0].substring(0, 2).toUpperCase();
+    return nameParts[0].substring(0, 1).toUpperCase();
   }
   var firstName = nameParts[0];
   var lastName = nameParts[nameParts.length - 1];
