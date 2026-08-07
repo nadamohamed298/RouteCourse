@@ -1,41 +1,3 @@
-// Selecting the elements of the planet content to display the data of the selected planet card.
-// Planet info:
-var planetDetailImage = document.querySelector("#planet-detail-image");
-var planetDetailName = document.querySelector("#planet-detail-name");
-var planetDetailDescription = document.querySelector(
-  "#planet-detail-description",
-);
-
-var planetDistance = document.querySelector("#planet-distance");
-var planetRadius = document.querySelector("#planet-radius");
-var planetMass = document.querySelector("#planet-mass");
-var planetDensity = document.querySelector("#planet-density");
-var planetOrbitalPeriod = document.querySelector("#planet-orbital-period");
-var planetRotation = document.querySelector("#planet-rotation");
-var planetMoons = document.querySelector("#planet-moons");
-var planetGravity = document.querySelector("#planet-gravity");
-
-// Discovery Info:
-var planetDiscoverer = document.querySelector("#planet-discoverer");
-var planetDiscoveryDate = document.querySelector("#planet-discovery-date");
-var planetBodyType = document.querySelector("#planet-body-type");
-var planetVolume = document.querySelector("#planet-volume");
-
-// Planet Quick Facts:
-var planetMassFact = document.querySelector("#planetMass");
-var planetGravityFact = document.querySelector("#planetGravity");
-var planetDensityFact = document.querySelector("#planetDensity");
-var planetAxialTiltFact = document.querySelector("#planetAxialTilt");
-
-// Orbital Characteristics:
-var planetPerihelion = document.querySelector("#planet-perihelion");
-var planetAphelion = document.querySelector("#planet-aphelion");
-var planetEccentricity = document.querySelector("#planet-eccentricity");
-var planetInclination = document.querySelector("#planet-inclination");
-var planetAxialTilt = document.querySelector("#planet-axial-tilt");
-var planetTemp = document.querySelector("#planet-temp");
-var planetEscapeVelocity = document.querySelector("#planet-escape");
-
 const PLANET_API_URL = "https://solar-system-opendata-proxy.vercel.app/api/planets";
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -49,40 +11,47 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 });
 
-// Aside buttons.
-var asideButtons = document.querySelectorAll(".nav-link");
-var sections = document.querySelectorAll("section");
+function asideButtonsClickSubscription() {
+  // Aside buttons.
+  var asideButtons = document.querySelectorAll(".nav-link");
+  var sections = document.querySelectorAll("section");
 
-for (var i = 0; i < asideButtons.length; i++) {
-  asideButtons[i].addEventListener("click", function (e) {
-    closeSidebar();
-    var selectedAsideButton = e.currentTarget.getAttribute("data-section");
+  for (var i = 0; i < asideButtons.length; i++) {
+    asideButtons[i].addEventListener("click", function (e) {
+      closeSidebar();
+      var selectedAsideButton = e.currentTarget.getAttribute("data-section");
 
-    for (var i = 0; i < asideButtons.length; i++) {
-      // remove active state from all buttons.
-      asideButtons[i].classList.remove(
+      for (var i = 0; i < asideButtons.length; i++) {
+        // remove active state from all buttons.
+        asideButtons[i].classList.remove(
+          "active",
+          "bg-blue-500/10",
+          "text-blue-400",
+        );
+        asideButtons[i].classList.add("text-slate-300", "hover:bg-slate-800");
+      }
+
+      // add active state to the selected button.
+      e.currentTarget.classList.add(
         "active",
         "bg-blue-500/10",
         "text-blue-400",
       );
-      asideButtons[i].classList.add("text-slate-300", "hover:bg-slate-800");
-    }
+      e.currentTarget.classList.remove("text-slate-300", "hover:bg-slate-800");
 
-    // add active state to the selected button.
-    e.currentTarget.classList.add("active", "bg-blue-500/10", "text-blue-400");
-    e.currentTarget.classList.remove("text-slate-300", "hover:bg-slate-800");
-
-    for (var j = 0; j < sections.length; j++) {
-      sections[j].classList.add("hidden");
-
-      if (selectedAsideButton === sections[j].getAttribute("data-section")) {
-        sections[j].classList.remove("hidden");
-      } else {
+      for (var j = 0; j < sections.length; j++) {
         sections[j].classList.add("hidden");
+
+        if (selectedAsideButton === sections[j].getAttribute("data-section")) {
+          sections[j].classList.remove("hidden");
+        } else {
+          sections[j].classList.add("hidden");
+        }
       }
-    }
-  });
+    });
+  }
 }
+asideButtonsClickSubscription();
 
 // Menu button.
 var burgerMenuButton = document.querySelector("#sidebar-toggle");
@@ -105,40 +74,88 @@ function closeSidebar() {
 darkOverlay.addEventListener("click", closeSidebar);
 
 // Styling the text of the planets in the table based on their type (Gas Giant, Ice Giant, Terrestrial).
-var gasGiantPurpleText = document.querySelectorAll(".gas-giant-purple-text");
-var iceGiantBlueText = document.querySelectorAll(".ice-giant-blue-text");
-var terrestrialOrangeText = document.querySelectorAll(".terrestrial-orange-text");
-
 // Gas Giant Color, And Background Color Styling.
-for (var i = 0; i < gasGiantPurpleText.length; i++) {
-  gasGiantPurpleText[i].style.backgroundColor = "#a855f780";
-  gasGiantPurpleText[i].style.color = "#c084fc";
+function gasGiantCssStyling() {
+  var gasGiantPurpleText = document.querySelectorAll(".gas-giant-purple-text");
+  for (var i = 0; i < gasGiantPurpleText.length; i++) {
+    gasGiantPurpleText[i].style.backgroundColor = "#a855f780";
+    gasGiantPurpleText[i].style.color = "#c084fc";
+  }
 }
+gasGiantCssStyling();
 
 // Ice Giant Color, And Background Color Styling.
-for (var j = 0; j < iceGiantBlueText.length; j++) {
-  iceGiantBlueText[j].style.backgroundColor = "#3b82f680";
-  iceGiantBlueText[j].style.color = "#60a5fa";
+function iceGiantCssStyling() {
+  var iceGiantBlueText = document.querySelectorAll(".ice-giant-blue-text");
+  for (var j = 0; j < iceGiantBlueText.length; j++) {
+    iceGiantBlueText[j].style.backgroundColor = "#3b82f680";
+    iceGiantBlueText[j].style.color = "#60a5fa";
+  }
 }
+iceGiantCssStyling();
 
 // Terrestrial Color, And Background Color Styling.
-for (var k = 0; k < terrestrialOrangeText.length; k++) {
-  terrestrialOrangeText[k].style.backgroundColor = "#f9731680";
-  terrestrialOrangeText[k].style.color = "#fb923c";
+function terrestrialCssStyling() {
+  var terrestrialOrangeText = document.querySelectorAll(
+    ".terrestrial-orange-text",
+  );
+  for (var k = 0; k < terrestrialOrangeText.length; k++) {
+    terrestrialOrangeText[k].style.backgroundColor = "#f9731680";
+    terrestrialOrangeText[k].style.color = "#fb923c";
+  }
 }
+terrestrialCssStyling();
 
 // 8 Planet cards.
 var planetCards = document.querySelectorAll(".planet-card");
 var planets = [];
 
 function displayPlanetData(planet) {
+  // Selecting the elements of the planet content to display the data of the selected planet card.
+  // Planet info:
+  var planetDetailImage = document.querySelector("#planet-detail-image");
+  var planetDetailName = document.querySelector("#planet-detail-name");
+  var planetDetailDescription = document.querySelector("#planet-detail-description");
+
+  var planetDistance = document.querySelector("#planet-distance");
+  var planetRadius = document.querySelector("#planet-radius");
+  var planetMass = document.querySelector("#planet-mass");
+  var planetDensity = document.querySelector("#planet-density");
+  var planetOrbitalPeriod = document.querySelector("#planet-orbital-period");
+  var planetRotation = document.querySelector("#planet-rotation");
+  var planetMoons = document.querySelector("#planet-moons");
+  var planetGravity = document.querySelector("#planet-gravity");
+
+  // Discovery Info:
+  var planetDiscoverer = document.querySelector("#planet-discoverer");
+  var planetDiscoveryDate = document.querySelector("#planet-discovery-date");
+  var planetBodyType = document.querySelector("#planet-body-type");
+  var planetVolume = document.querySelector("#planet-volume");
+
+  // Planet Quick Facts:
+  var planetMassFact = document.querySelector("#planetMass");
+  var planetGravityFact = document.querySelector("#planetGravity");
+  var planetDensityFact = document.querySelector("#planetDensity");
+  var planetAxialTiltFact = document.querySelector("#planetAxialTilt");
+
+  // Orbital Characteristics:
+  var planetPerihelion = document.querySelector("#planet-perihelion");
+  var planetAphelion = document.querySelector("#planet-aphelion");
+  var planetEccentricity = document.querySelector("#planet-eccentricity");
+  var planetInclination = document.querySelector("#planet-inclination");
+  var planetAxialTilt = document.querySelector("#planet-axial-tilt");
+  var planetTemp = document.querySelector("#planet-temp");
+  var planetEscapeVelocity = document.querySelector("#planet-escape");
+
   planetDetailImage.src = planet.image;
   planetDetailName.textContent = planet.englishName;
   planetDetailDescription.textContent = planet.description;
 
-  planetDistance.textContent = (planet.semimajorAxis / 1000000).toFixed(1) + "M km";
+  planetDistance.textContent =
+    (planet.semimajorAxis / 1000000).toFixed(1) + "M km";
   planetRadius.textContent = planet.meanRadius.toFixed(0) + " km";
-  planetMass.textContent = planet.mass.massValue + " x 10^" + planet.mass.massExponent + " kg";
+  planetMass.textContent =
+    planet.mass.massValue + " x 10^" + planet.mass.massExponent + " kg";
   planetDensity.textContent = planet.density.toFixed(2) + " g/cm³";
   planetOrbitalPeriod.textContent = planet.sideralOrbit.toFixed(2) + " days";
   planetRotation.textContent = planet.sideralRotation.toFixed(2) + " hours";
@@ -164,14 +181,22 @@ function displayPlanetData(planet) {
   }
 
   planetBodyType.textContent = planet.bodyType;
-  planetVolume.textContent = planet.vol.volValue + " x 10^" + planet.vol.volExponent + " km³";
+  planetVolume.textContent =
+    planet.vol.volValue + " x 10^" + planet.vol.volExponent + " km³";
 
-  planetMassFact.textContent = "Mass: " + planet.mass.massValue + " x 10^" + planet.mass.massExponent + " kg";
-  planetGravityFact.textContent = "Surface gravity: " + planet.gravity + " m/s²";
+  planetMassFact.textContent =
+    "Mass: " +
+    planet.mass.massValue +
+    " x 10^" +
+    planet.mass.massExponent +
+    " kg";
+  planetGravityFact.textContent =
+    "Surface gravity: " + planet.gravity + " m/s²";
   planetDensityFact.textContent = "Density: " + planet.density + " g/cm³";
   planetAxialTiltFact.textContent = "Axial tilt: " + planet.axialTilt + "°";
 
-  planetPerihelion.textContent = (planet.perihelion / 1000000).toFixed(1) + "M km";
+  planetPerihelion.textContent =
+    (planet.perihelion / 1000000).toFixed(1) + "M km";
   planetAphelion.textContent = (planet.aphelion / 1000000).toFixed(1) + "M km";
   planetEccentricity.textContent = planet.eccentricity.toFixed(5);
 
@@ -189,7 +214,8 @@ function displayPlanetData(planet) {
     planetTemp.textContent = planet.avgTemp + "°C";
   }
 
-  planetEscapeVelocity.textContent = (planet.escape / 1000).toFixed(2) + " km/s";
+  planetEscapeVelocity.textContent =
+    (planet.escape / 1000).toFixed(2) + " km/s";
 }
 
 async function planetData() {
@@ -220,19 +246,6 @@ planetData();
 var launches = [];
 const LAUNCHES_API_URL = "https://lldev.thespacedevs.com/2.3.0/launches/upcoming/?limit=10";
 
-// Select Launch Dynamic Data Elements.
-var featuredLaunchImage = document.querySelector("#featuredLaunchImage");
-var launchTitle = document.querySelector("#launchTitle");
-var buildingText = document.querySelector("#buildingText");
-var rocketText = document.querySelector("#rocketText");
-var countdownContainer = document.querySelector("#countdownContainer");
-var daysLeftUntilLaunch = document.querySelector("#daysLeftUntilLaunch");
-var launchDate = document.querySelector("#launchDate");
-var launchTime = document.querySelector("#launchTime");
-var launchLocation = document.querySelector("#launchLocation");
-var launchCountry = document.querySelector("#launchCountry");
-var launchDescription = document.querySelector("#launchDescription");
-
 async function launchData() {
   var response = await fetch(LAUNCHES_API_URL);
   var data = await response.json();
@@ -244,10 +257,25 @@ async function launchData() {
 launchData();
 
 function displayFeaturedLaunchData(featuredLaunch) {
+  // Select Launch Dynamic Data Elements.
+  var featuredLaunchImage = document.querySelector("#featuredLaunchImage");
+  var launchTitle = document.querySelector("#launchTitle");
+  var buildingText = document.querySelector("#buildingText");
+  var rocketText = document.querySelector("#rocketText");
+  var countdownContainer = document.querySelector("#countdownContainer");
+  var daysLeftUntilLaunch = document.querySelector("#daysLeftUntilLaunch");
+  var launchDate = document.querySelector("#launchDate");
+  var launchTime = document.querySelector("#launchTime");
+  var launchLocation = document.querySelector("#launchLocation");
+  var launchCountry = document.querySelector("#launchCountry");
+  var launchDescription = document.querySelector("#launchDescription");
+
   var launchDateObject = new Date(featuredLaunch.net);
   var today = new Date();
   var differenceInMilliseconds = launchDateObject - today;
-  var differenceInDays = Math.ceil(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+  var differenceInDays = Math.ceil(
+    differenceInMilliseconds / (1000 * 60 * 60 * 24),
+  );
 
   featuredLaunchImage.src = featuredLaunch.image.image_url;
   featuredLaunchImage.classList.add("object-cover", "h-full");
@@ -390,10 +418,10 @@ function addImageHoverEffect() {
   }
 }
 
-const APOD_API_URL = "https://api.nasa.gov/planetary/apod?api_key=giY3LcmVcwYdmREQwLz0HFBxidfY1oBX8MBgFfU6";
 var apod = {};
-
 async function astronomyPictureOfTheDayData(date) {
+  const APOD_API_URL =
+    "https://api.nasa.gov/planetary/apod?api_key=7gLBv6D4H65N4wexrEC1wssMuTiQDkd9XSKFMb0q";
   var url = APOD_API_URL;
 
   if (date) {
@@ -446,8 +474,7 @@ function displayAPOD(apodData) {
                     </div>
                     <div class="flex items-center space-x-2 md:space-x-3">
                         <label for="apod-date-input" class="date-input-wrapper">
-                            <input type="date" id="apod-date-input" class="custom-date-input" value="2024-03-14" max=""
-                                min="1995-06-16" />
+                            <input type="date" id="apod-date-input" class="custom-date-input" value="${apodData.date}" max="" min="1995-06-16"/>
                             <span id="dateLabelText" class="text-sm">${shortDate}</span>
                         </label>
                         <button id="load-date-btn"
@@ -529,9 +556,32 @@ function displayAPOD(apodData) {
 
   dateInputMax();
   viewFullResolutionButton(apodData);
-  setupDateInput();
+  dateInputChangeOnSelect();
   todayButton();
   loadButton();
+}
+
+function dateInputFormat(date) {
+  return date.toISOString().slice(0, 10);
+}
+
+function todayButton() {
+  var todayBtn = document.querySelector("#today-apod-btn");
+  var apodDate = document.querySelector("#apod-date");
+  var dateLabelText = document.querySelector("#dateLabelText");
+  var dateInput = document.querySelector("#apod-date-input");
+
+  todayBtn.addEventListener("click", function () {
+    var today = new Date();
+    // Update the calendar input
+    dateInput.value = dateInputFormat(today);
+    // Update the date label inside the calendar
+    dateLabelText.textContent = shortDateFormat(today);
+    // Update APOD heading date
+    apodDate.textContent =
+      "Astronomy Picture of the Day - " + longDateFormat(today);
+    astronomyPictureOfTheDayData();
+  });
 }
 
 function viewFullResolutionButton(apodData) {
@@ -546,33 +596,22 @@ function viewFullResolutionButton(apodData) {
   });
 }
 
-function setupDateInput() {
-  var dateInput = document.querySelector("#apod-date-input");
+function dateInputChangeOnSelect() {
   var dateLabelText = document.querySelector("#dateLabelText");
+  var dateInput = document.querySelector("#apod-date-input");
 
   dateInput.addEventListener("change", function () {
-    var selectedDate = new Date(dateInput.value);
-    dateLabelText.textContent = formatShortDate(selectedDate);
+    var inputValue = dateInput.value;
+    var selectedDate = new Date(inputValue);
+    dateLabelText.textContent = shortDateFormat(selectedDate);
   });
 }
 
 // A function that make the user not able to select a date in the future that has not come yet.
 function dateInputMax() {
   var dateInput = document.querySelector("#apod-date-input");
+  // var today = new Date();
   dateInput.max = new Date().toISOString().slice(0, 10);
-}
-
-function todayButton() {
-  var todayBtn = document.querySelector("#today-apod-btn");
-  var dateLabelText = document.querySelector("#dateLabelText");
-  var apodDate = document.querySelector("#apod-date");
-
-  todayBtn.addEventListener("click", function () {
-    var today = new Date();
-    dateLabelText.textContent = formatShortDate(today);
-    apodDate.textContent = "Astronomy Picture of the Day - " + longDateFormat(today);
-    astronomyPictureOfTheDayData();
-  });
 }
 
 function loadButton() {
@@ -582,11 +621,14 @@ function loadButton() {
   var apodDate = document.querySelector("#apod-date");
 
   loadBtn.addEventListener("click", function () {
+    // Read the selected date from the calendar
     var selectedDate = dateInput.value;
+    // Convert it to a Date object
     var selectedDateObject = new Date(selectedDate);
 
     dateLabelText.textContent = shortDateFormat(selectedDateObject);
-    apodDate.textContent = "Astronomy Picture of the Day - " + formatLongDate(selectedDateObject);
+    apodDate.textContent =
+      "Astronomy Picture of the Day - " + longDateFormat(selectedDateObject);
     astronomyPictureOfTheDayData(selectedDate);
   });
 }
