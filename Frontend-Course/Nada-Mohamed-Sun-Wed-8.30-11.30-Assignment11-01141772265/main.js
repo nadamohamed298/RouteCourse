@@ -1,4 +1,5 @@
-const PLANET_API_URL = "https://solar-system-opendata-proxy.vercel.app/api/planets";
+const PLANET_API_URL =
+  "https://solar-system-opendata-proxy.vercel.app/api/planets";
 
 document.addEventListener("DOMContentLoaded", async function () {
   var response = await fetch(PLANET_API_URL);
@@ -110,43 +111,45 @@ terrestrialCssStyling();
 var planetCards = document.querySelectorAll(".planet-card");
 var planets = [];
 
+// Selecting the elements of the planet content to display the data of the selected planet card.
+// Planet info:
+var planetDetailImage = document.querySelector("#planet-detail-image");
+var planetDetailName = document.querySelector("#planet-detail-name");
+var planetDetailDescription = document.querySelector(
+  "#planet-detail-description",
+);
+
+var planetDistance = document.querySelector("#planet-distance");
+var planetRadius = document.querySelector("#planet-radius");
+var planetMass = document.querySelector("#planet-mass");
+var planetDensity = document.querySelector("#planet-density");
+var planetOrbitalPeriod = document.querySelector("#planet-orbital-period");
+var planetRotation = document.querySelector("#planet-rotation");
+var planetMoons = document.querySelector("#planet-moons");
+var planetGravity = document.querySelector("#planet-gravity");
+
+// Discovery Info:
+var planetDiscoverer = document.querySelector("#planet-discoverer");
+var planetDiscoveryDate = document.querySelector("#planet-discovery-date");
+var planetBodyType = document.querySelector("#planet-body-type");
+var planetVolume = document.querySelector("#planet-volume");
+
+// Planet Quick Facts:
+var planetMassFact = document.querySelector("#planetMass");
+var planetGravityFact = document.querySelector("#planetGravity");
+var planetDensityFact = document.querySelector("#planetDensity");
+var planetAxialTiltFact = document.querySelector("#planetAxialTilt");
+
+// Orbital Characteristics:
+var planetPerihelion = document.querySelector("#planet-perihelion");
+var planetAphelion = document.querySelector("#planet-aphelion");
+var planetEccentricity = document.querySelector("#planet-eccentricity");
+var planetInclination = document.querySelector("#planet-inclination");
+var planetAxialTilt = document.querySelector("#planet-axial-tilt");
+var planetTemp = document.querySelector("#planet-temp");
+var planetEscapeVelocity = document.querySelector("#planet-escape");
+
 function displayPlanetData(planet) {
-  // Selecting the elements of the planet content to display the data of the selected planet card.
-  // Planet info:
-  var planetDetailImage = document.querySelector("#planet-detail-image");
-  var planetDetailName = document.querySelector("#planet-detail-name");
-  var planetDetailDescription = document.querySelector("#planet-detail-description");
-
-  var planetDistance = document.querySelector("#planet-distance");
-  var planetRadius = document.querySelector("#planet-radius");
-  var planetMass = document.querySelector("#planet-mass");
-  var planetDensity = document.querySelector("#planet-density");
-  var planetOrbitalPeriod = document.querySelector("#planet-orbital-period");
-  var planetRotation = document.querySelector("#planet-rotation");
-  var planetMoons = document.querySelector("#planet-moons");
-  var planetGravity = document.querySelector("#planet-gravity");
-
-  // Discovery Info:
-  var planetDiscoverer = document.querySelector("#planet-discoverer");
-  var planetDiscoveryDate = document.querySelector("#planet-discovery-date");
-  var planetBodyType = document.querySelector("#planet-body-type");
-  var planetVolume = document.querySelector("#planet-volume");
-
-  // Planet Quick Facts:
-  var planetMassFact = document.querySelector("#planetMass");
-  var planetGravityFact = document.querySelector("#planetGravity");
-  var planetDensityFact = document.querySelector("#planetDensity");
-  var planetAxialTiltFact = document.querySelector("#planetAxialTilt");
-
-  // Orbital Characteristics:
-  var planetPerihelion = document.querySelector("#planet-perihelion");
-  var planetAphelion = document.querySelector("#planet-aphelion");
-  var planetEccentricity = document.querySelector("#planet-eccentricity");
-  var planetInclination = document.querySelector("#planet-inclination");
-  var planetAxialTilt = document.querySelector("#planet-axial-tilt");
-  var planetTemp = document.querySelector("#planet-temp");
-  var planetEscapeVelocity = document.querySelector("#planet-escape");
-
   planetDetailImage.src = planet.image;
   planetDetailName.textContent = planet.englishName;
   planetDetailDescription.textContent = planet.description;
@@ -228,8 +231,11 @@ async function planetData() {
       // select the planet name from the data-planet-id attribute of the clicked card
       //  and convert the first letter to upper case to match the englishName property
       //  of the planet object in the bodies (planets) array.
-      var selectedPlanetNameLowerCase = e.currentTarget.getAttribute("data-planet-id");
-      var selectedPlanetCard = selectedPlanetNameLowerCase.charAt(0).toUpperCase() + selectedPlanetNameLowerCase.slice(1);
+      var selectedPlanetNameLowerCase =
+        e.currentTarget.getAttribute("data-planet-id");
+      var selectedPlanetCard =
+        selectedPlanetNameLowerCase.charAt(0).toUpperCase() +
+        selectedPlanetNameLowerCase.slice(1);
 
       for (var j = 0; j < planets.length; j++) {
         if (selectedPlanetCard === planets[j].englishName) {
@@ -244,7 +250,8 @@ async function planetData() {
 planetData();
 
 var launches = [];
-const LAUNCHES_API_URL = "https://lldev.thespacedevs.com/2.3.0/launches/upcoming/?limit=10";
+const LAUNCHES_API_URL =
+  "https://lldev.thespacedevs.com/2.3.0/launches/upcoming/?limit=10";
 
 async function launchData() {
   var response = await fetch(LAUNCHES_API_URL);
@@ -270,22 +277,48 @@ function displayFeaturedLaunchData(featuredLaunch) {
   var launchCountry = document.querySelector("#launchCountry");
   var launchDescription = document.querySelector("#launchDescription");
 
+  // Convert the launch date/time from the API (a string) into a JavaScript Date object.
   var launchDateObject = new Date(featuredLaunch.net);
+  // Create a Date object representing the current date and time.
   var today = new Date();
+  // Subtract today's date/time from the launch date/time.
+  // The result is the remaining time in milliseconds until the launch.
   var differenceInMilliseconds = launchDateObject - today;
+  // Convert the remaining milliseconds into days.
+  // 1000 = milliseconds in 1 second.
+  // 60 = seconds in 1 minute.
+  // 60 = minutes in 1 hour.
+  // 24 = hours in 1 day.
+  // Math.ceil() rounds the result UP to the next whole day.
+
   var differenceInDays = Math.ceil(
     differenceInMilliseconds / (1000 * 60 * 60 * 24),
   );
 
+  // Change the source (src) of the featured launch image
+  // to the image URL received from the API.
   featuredLaunchImage.src = featuredLaunch.image.image_url;
+  // Add Tailwind CSS classes to the featured launch image.
+  // "object-cover" makes the image cover its container.
+  // "h-full" makes the image take the full height of its container.
   featuredLaunchImage.classList.add("object-cover", "h-full");
+  // Display the launch name received from the API
+  // inside the element that has the ID "launchTitle".
   launchTitle.textContent = featuredLaunch.name;
+  // Display the name of the company/organization responsible for the launch.
   buildingText.textContent = featuredLaunch.launch_service_provider.name;
+  // Display the name of the rocket configuration.
   rocketText.textContent = featuredLaunch.rocket.configuration.name;
 
+  // Display the number of days remaining until the launch.
   daysLeftUntilLaunch.textContent = differenceInDays;
 
+  // Check whether the launch date has already arrived
+  // or has passed.
   if (differenceInDays <= 0) {
+    // Hide the countdown container if there are 0 days or fewer remaining.
+    // "!important" is used to make sure this display rule overrides
+    // other CSS rules that might otherwise show the element.
     countdownContainer.style.cssText = "display: none !important;";
   }
 
