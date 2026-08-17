@@ -64,11 +64,11 @@ function asideButtons() {
         updateHeaderText("Meals & Recipes", "Discover delicious and nutritious recipes tailored for you");
       } else if (buttonText === "Product Scanner") {
         SECTIONS[4].classList.remove("hidden");
-        updateHeaderText("Product Scanner", "Scan products to view nutrition information");
+        updateHeaderText("Product Scanner", "Search packaged foods by name or barcode");
         resetProductScanner();
       } else if (buttonText === "Food Log") {
         SECTIONS[5].classList.remove("hidden");
-        updateHeaderText("Food Log", "Track and monitor your daily nutrition intake");
+        updateHeaderText("Food Log", "Track your daily nutrition and food intake");
       }
     });
   }
@@ -1245,7 +1245,7 @@ function showMealLoggedAlert(mealName, servings, totalCalories) {
     Swal.fire({
       icon: "success",
       title: "Meal Logged!",
-      text: mealName + " (" + servingText + ") has been added to your daily log. +" + totalCalories + " calories",
+      html: mealName + " (" + servingText + ") has been added to your daily log. <span class='text-emerald-600 font-semibold'>+" + totalCalories + " calories</span>",
       showConfirmButton: false,
       timer: 2500,
       width: "540px",
@@ -2412,17 +2412,43 @@ function removeFoodLogItem(itemId) {
 
 // Function to clear all food log items
 function clearAllFoodLogItems() {
-  let logData = loadDailyLog();
-  let dateKey = getTodayDateKey();
-  logData[dateKey] = {
-    meals: [],
-    totalCalories: 0,
-    totalProtein: 0,
-    totalCarbs: 0,
-    totalFat: 0
-  };
-  saveDailyLog(logData);
-  displayFoodLog();
+  loadSweetAlert2(function () {
+    Swal.fire({
+      title: "Clear Today's Log?",
+      text: "This will remove all logged food items for today.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#ef4444",
+      cancelButtonColor: "#6b7280",
+      confirmButtonText: "Yes, clear it!",
+      cancelButtonText: "Cancel"
+    }).then(function(result) {
+      if (result.isConfirmed) {
+        let logData = loadDailyLog();
+        let dateKey = getTodayDateKey();
+        logData[dateKey] = {
+          meals: [],
+          totalCalories: 0,
+          totalProtein: 0,
+          totalCarbs: 0,
+          totalFat: 0
+        };
+        saveDailyLog(logData);
+        displayFoodLog();
+        showNotification("Today's log cleared", "success");
+        
+        // Show success message with SweetAlert2
+        Swal.fire({
+          icon: "success",
+          title: "Cleared!",
+          text: "Your food log has been cleared.",
+          showConfirmButton: false,
+          timer: 2500,
+          width: "540px"
+        });
+      }
+    });
+  });
 }
 
 // Function to get week dates
